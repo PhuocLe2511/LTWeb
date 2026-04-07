@@ -1,0 +1,70 @@
+﻿@model PagedResult<Product>
+@{
+    Layout = null;
+}
+
+@if (!Model.DataItems.Any())
+{
+    <p>Không có sản phẩm</p>
+}
+else
+{
+    foreach (var item in Model.DataItems)
+    {
+        <form method="post"
+              onsubmit="addCartItem(event,this)"
+              class="border rounded p-2 mb-2">
+
+            <input type="hidden" name="productID" value="@item.ProductID" />
+
+            <strong>@item.ProductName</strong>
+
+            <div class="row mt-2">
+                <div class="col-4">
+                    <img src="~/images/products/@(item.Photo ?? "nophoto.png")"
+                         class="img-fluid border"
+                         style="max-height:100px" />
+                </div>
+
+                <div class="col-8">
+                    <input name="price" value="@item.Price" class="form-control mb-1" />
+                    <input type="number" name="quantity" value="1" min="1" class="form-control" />
+
+                    <button class="btn btn-sm btn-primary mt-2 w-100">
+                        Thêm vào giỏ
+                    </button>
+                </div>
+            </div>
+        </form>
+    }
+}
+
+<!-- PAGINATION -->
+<div class="card-footer">
+    <ul class="pagination justify-content-between mb-0">
+
+        <!-- PREV -->
+        <li class="page-item @(Model.Page <= 1 ? "disabled" : "")">
+            <a href="javascript:void(0);" class="page-link"
+               onclick="paginationSearch(@(Model.Page - 1))">
+                ← Prev
+            </a>
+        </li>
+
+        <!-- INFO -->
+        <li class="page-item disabled">
+            <span class="page-link">
+                Trang @Model.Page / @Model.PageCount
+            </span>
+        </li>
+
+        <!-- NEXT -->
+        <li class="page-item @(Model.Page >= Model.PageCount ? "disabled" : "")">
+            <a href="javascript:void(0);" class="page-link"
+               onclick="paginationSearch(@(Model.Page + 1))">
+                Next →
+            </a>
+        </li>
+
+    </ul>
+</div>

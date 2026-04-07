@@ -1,0 +1,35 @@
+@{
+    ViewData["Title"] = "Thêm thuộc tính sản phẩm";
+}
+
+<div class="card card-success card-outline mb-4">
+    <div class="card-header">
+        <h3 class="card-title">Thêm thuộc tính cho sản phẩm: <strong>Sản phẩm 1</strong></h3>
+    </div>
+    <form onsubmit="event.preventDefault()">
+        <div class="card-body">
+            <div class="mb-3">
+                <label for="attributeName" class="form-label">Tên thuộc tính: <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="attributeName" name="attributeName" placeholder="VD: Màu sắc, Kích thước, Chất liệu..." required>
+            </div>
+
+            <div class="mb-3">
+                <label for="attributeValue" class="form-label">Giá trị: <span class="text-danger">*</span></label>
+                <input type="text" class="form-control" id="attributeValue" name="attributeValue" placeholder="VD: Đỏ, XL, Cotton..." required>
+            </div>
+
+            <div class="mb-3">
+                <label for="displayOrder" class="form-label">Thứ tự hiển thị:</label>
+                <input type="number" class="form-control" id="displayOrder" name="displayOrder" value="1" min="1">
+            </div>
+        </div>
+        <div class="card-footer">
+            <button type="submit" class="btn btn-success">
+                <i class="bi bi-save"></i> Lưu thuộc tính
+            </button>
+            <a href="~/Product/ListAttributes/1" class="btn btn-secondary">
+                <i class="bi bi-x-circle"></i> Hủy bỏ
+            </a>
+        </div>
+    </form>
+</div>

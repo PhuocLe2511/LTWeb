@@ -1,0 +1,81 @@
+﻿@model OrderSearchInput
+@{
+    ViewBag.Title = "Quản lý Đơn hàng";
+}
+@section PageToolBar {
+    <a href="~/Order/Create" class="btn btn-primary">
+        <i class="bi bi-plus-circle me-1"></i>
+        Lập đơn hàng mới
+    </a>
+}
+<div class="card mb-3">
+    <div class="card-body">
+        <form id="formSearch" method="get" action="~/Order/Search" data-target="searchResult">
+            <div class="row g-2">
+                <div class="col-md-3">
+                    <label class="form-label">Trạng thái đơn hàng</label>
+                    <select class="form-select" name="@nameof(Model.Status)">
+                        <option value="">-- Tất cả --</option>
+                        <option value="1" selected="@(Model.Status == OrderStatusEnum.New ? "true" : "false")">Mới</option>
+                        <option value="2" selected="@(Model.Status == OrderStatusEnum.Accepted ? "true" : "false")">Đã duyệt</option>
+                        <option value="3" selected="@(Model.Status == OrderStatusEnum.Shipping ? "true" : "false")">Đang giao</option>
+                        <option value="4" selected="@(Model.Status == OrderStatusEnum.Completed ? "true" : "false")">Hoàn tất</option>
+                        <option value="-1" selected="@(Model.Status == OrderStatusEnum.Cancelled ? "true" : "false")">Bị hủy</option>
+                        <option value="-2" selected="@(Model.Status == OrderStatusEnum.Rejected ? "true" : "false")">Bị từ chối</option>
+                    </select>
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">Thời gian lập đơn</label>
+                    <div class="input-group">
+                        <input type="date"
+                               name="@nameof(Model.DateFrom)" 
+                               class="form-control"
+                               value="@(Model.DateFrom?.ToString("yyyy-MM-dd") ?? "")" />
+                        <span class="input-group-text">-</span>
+                        <input type="date"
+                               name="@nameof(Model.DateTo)"
+                               class="form-control"
+                               value="@(Model.DateTo?.ToString("yyyy-MM-dd") ?? "")" />
+                    </div>
+                </div>
+
+                <div class="col-md-5">
+                    <label class="form-label">Tìm kiếm</label>
+                    <div class="input-group">
+                        <input id="searchValue" name="@nameof(Model.SearchValue)" type="text"
+                               class="form-control"
+                               placeholder="Tên khách hàng..." autofocus
+                               value="@Model.SearchValue" />
+                        <button type="submit" class="btn btn-info d-flex align-items-center">
+                            <i class="bi bi-search me-1"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="searchResult">
+    <!-- Search Results will be loaded here -->
+</div>
+
+@section Scripts {
+    <script>
+        function doSearch(page) {
+            paginationSearch(null, document.getElementById("formSearch"), page);
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            doSearch(@Model.Page);
+
+            const formSearch = document.getElementById("formSearch");
+            if (formSearch) {
+                formSearch.addEventListener("submit", function (e) {
+                    paginationSearch(e, this, 1);
+                });
+            }
+        });
+    </script>
+}

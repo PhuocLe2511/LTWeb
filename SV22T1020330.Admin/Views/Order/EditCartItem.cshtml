@@ -1,0 +1,87 @@
+﻿@model OrderDetailViewInfo
+@{
+    Layout = null;
+}
+
+<div class="modal-header">
+    <strong class="modal-title">
+        Cập nhật thông tin hàng trong giỏ
+    </strong>
+    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+
+<div class="modal-body">
+    <form id="formEditCart"
+          method="post"
+          class="container-fluid"
+          onsubmit="updateCartItem(event, this)">
+
+        <!-- ProductID -->
+        <input type="hidden" asp-for="ProductID" />
+
+        <div class="row">
+            <!-- LEFT -->
+            <div class="col-md-8">
+
+                <!-- Tên sản phẩm -->
+                <div class="row mb-3 align-items-center">
+                    <label class="col-sm-4 col-form-label fw-semibold">
+                        Mặt hàng
+                    </label>
+                    <div class="col-sm-8">
+                        @Model.ProductName
+                    </div>
+                </div>
+
+                <!-- Số lượng -->
+                <div class="row mb-3 align-items-center">
+                    <label class="col-sm-4 col-form-label fw-semibold">
+                        Số lượng
+                    </label>
+                    <div class="col-sm-5">
+                        <input type="number"
+                               class="form-control text-end"
+                               min="1"
+                               asp-for="Quantity" />
+                    </div>
+                </div>
+
+                <!-- Đơn giá -->
+                <div class="row mb-3 align-items-center">
+                    <label class="col-sm-4 col-form-label fw-semibold">
+                        Đơn giá
+                    </label>
+                    <div class="col-sm-5">
+                        <input type="text"
+                               class="form-control text-end money-input"
+                               asp-for="SalePrice" />
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- RIGHT -->
+            <div class="col-md-4 text-end">
+                <img src="/images/products/@Model.Photo"
+                     alt="@Model.ProductName"
+                     class="img-thumbnail"
+                     style="max-height:180px" />
+            </div>
+        </div>
+
+    </form>
+</div>
+
+<div class="modal-footer">
+    <button type="submit"
+            class="btn btn-primary"
+            form="formEditCart">
+        Cập nhật
+    </button>
+
+    <button type="button"
+            class="btn btn-secondary"
+            data-bs-dismiss="modal">
+        Đóng
+    </button>
+</div>

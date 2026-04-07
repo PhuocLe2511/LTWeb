@@ -1,0 +1,93 @@
+﻿@using SV22T1020330.Models.Security
+@using SV22T1020330.Shop.AppCodes
+@{
+    var user = Context.Session.GetObject<UserAccount>("User");
+}
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@(ViewData["Title"] != null ? ViewData["Title"] + " · " : "")MyShop</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+</head>
+<body class="shop-body d-flex flex-column min-vh-100">
+
+    <nav class="navbar navbar-expand-lg shop-navbar">
+        <div class="container">
+            <a class="navbar-brand" asp-controller="Product" asp-action="Index">MyShop</a>
+
+            <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#shopNav" aria-controls="shopNav" aria-expanded="false" aria-label="Menu">
+                <span class="navbar-toggler-icon" style="filter: invert(1);"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="shopNav">
+                <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+                    <li class="nav-item">
+                        <a class="nav-link shop-nav-pill" asp-controller="Product" asp-action="Index">Sản phẩm</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link shop-nav-pill" asp-controller="Cart" asp-action="Index">Giỏ hàng</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link shop-nav-pill" asp-controller="Order" asp-action="Index">Đơn hàng</a>
+                    </li>
+                    @if (user != null)
+                    {
+                        <li class="nav-item ms-lg-2">
+                            <span class="nav-link shop-nav-link py-2">Xin chào, @(string.IsNullOrWhiteSpace(user.DisplayName) ? user.Email : user.DisplayName)</span>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link shop-nav-link" asp-controller="Account" asp-action="Profile">Thông tin cá nhân</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link shop-nav-link" asp-controller="Account" asp-action="ChangePassword">Đổi mật khẩu</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-light btn-sm rounded-pill px-3 fw-semibold" asp-controller="Account" asp-action="Logout">Đăng xuất</a>
+                        </li>
+                    }
+                    else
+                    {
+                        <li class="nav-item ms-lg-2">
+                            <a class="nav-link shop-nav-link" asp-controller="Account" asp-action="Login">Đăng nhập</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="btn btn-light btn-sm rounded-pill px-3 fw-semibold" asp-controller="Account" asp-action="Register">Đăng ký</a>
+                        </li>
+                    }
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container flex-grow-1 shop-main py-4">
+        @RenderBody()
+    </main>
+
+    <footer class="shop-footer text-center text-md-start">
+        <div class="container">
+            <div class="row gy-2">
+                <div class="col-md-6">
+                    <strong class="text-white">MyShop</strong>
+                    <p class="small mb-0 mt-1">Cửa hàng trực tuyến — giao diện gọn, thao tác nhanh.</p>
+                </div>
+                <div class="col-md-6 text-md-end small">
+                    <span>© @DateTime.Now.Year</span>
+                    <span class="mx-2">·</span>
+                    <a href="#">Giới thiệu</a>
+                    <span class="mx-1">·</span>
+                    <a href="#">Liên hệ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

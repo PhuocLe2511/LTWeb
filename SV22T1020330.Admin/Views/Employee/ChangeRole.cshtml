@@ -1,0 +1,57 @@
+﻿@model SV22T1020330.Admin.Models.EmployeeRoleEditViewModel
+@{
+    ViewBag.Title = ViewBag.Title ?? "Vai trò nhân viên";
+}
+
+@section PageToolBar {
+    <button type="submit" form="formChangeRole" class="btn btn-primary">
+        <i class="bi bi-save me-1"></i>
+        Lưu
+    </button>
+    <a href="~/Employee" class="btn btn-secondary ms-1">
+        <i class="bi bi-arrow-left"></i>
+        Quay lại
+    </a>
+}
+
+<div class="row justify-content-center">
+    <div class="col-12 col-lg-8">
+        <div class="card card-primary card-outline">
+            <div class="card-header">
+                <h5 class="card-title mb-0">
+                    <i class="bi bi-shield-check me-2"></i>
+                    Vai trò nhân viên
+                </h5>
+            </div>
+            <div class="card-body">
+                <form id="formChangeRole" asp-action="ChangeRole" method="post">
+                    @Html.AntiForgeryToken()
+                    <input type="hidden" asp-for="EmployeeID" />
+
+                    <dl class="row mb-4">
+                        <dt class="col-sm-3">Họ và tên</dt>
+                        <dd class="col-sm-9">@Model.EmployeeName</dd>
+                        <dt class="col-sm-3">Email</dt>
+                        <dd class="col-sm-9">@Model.Email</dd>
+                    </dl>
+
+                    <div class="mb-3">
+                        <label asp-for="RoleNames" class="form-label">Vai trò (RoleNames)</label>
+                        <input asp-for="RoleNames" class="form-control" autocomplete="off"
+                               placeholder="admin, sales, datamanager" />
+                        <div class="form-text">
+                            Nhập các vai trò cách nhau bởi dấu phẩy, khớp cookie đăng nhập (ví dụ: <code>admin</code>, <code>sales</code>, <code>datamanager</code>). Để trống để xóa vai trò.
+                        </div>
+                        <span asp-validation-for="RoleNames" class="text-danger"></span>
+                    </div>
+
+                    <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

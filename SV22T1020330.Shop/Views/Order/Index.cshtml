@@ -1,0 +1,77 @@
+﻿@model SV22T1020330.Models.Common.PagedResult<SV22T1020330.Models.Sales.OrderViewInfo>
+@using SV22T1020330.Models.Sales
+
+<div class="shop-hero mb-4">
+    <h1>Đơn hàng của tôi</h1>
+    <p>Theo dõi trạng thái xử lý và lịch sử mua hàng.</p>
+</div>
+
+@if (Model.DataItems == null || !Model.DataItems.Any())
+{
+    <div class="shop-panel text-center py-5 text-muted">
+        <p class="mb-3">Bạn chưa có đơn hàng nào.</p>
+        <a asp-controller="Product" asp-action="Index" class="btn btn-primary rounded-pill">Mua sắm ngay</a>
+    </div>
+}
+else
+{
+    <div class="shop-panel p-0 overflow-hidden">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+                <thead class="table-light">
+                    <tr>
+                        <th class="ps-4">Mã đơn</th>
+                        <th>Khách hàng</th>
+                        <th>Ngày đặt</th>
+                        <th>Trạng thái</th>
+                        <th class="pe-4 text-end" style="width: 110px;"></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var order in Model.DataItems)
+                    {
+                        <tr>
+                            <td class="ps-4 fw-semibold">#@order.OrderID</td>
+                            <td>@order.CustomerName</td>
+                            <td>@order.OrderTime.ToString("dd/MM/yyyy HH:mm")</td>
+                            <td>
+                                @{
+                                    var st = order.Status;
+                                    var css = st switch
+                                    {
+                                        OrderStatusEnum.Rejected => "order-status-badge order-status-badge--rejected",
+                                        OrderStatusEnum.Cancelled => "order-status-badge order-status-badge--cancelled",
+                                        OrderStatusEnum.New => "order-status-badge order-status-badge--new",
+                                        OrderStatusEnum.Accepted => "order-status-badge order-status-badge--accepted",
+                                        OrderStatusEnum.Shipping => "order-status-badge order-status-badge--shipping",
+                                        OrderStatusEnum.Completed => "order-status-badge order-status-badge--completed",
+                                        _ => "order-status-badge order-status-badge--unknown"
+                                    };
+                                }
+                                <span class="@css">@order.Status.GetDescription()</span>
+                            </td>
+                            <td class="pe-4 text-end">
+                                <a class="btn btn-sm btn-outline-primary rounded-pill"
+                                   href="@Url.Action("Details", "Order", new { id = order.OrderID })">Chi tiết</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <nav class="mt-4" aria-label="Phân trang đơn hàng">
+        <ul class="pagination justify-content-center flex-wrap mb-0">
+            @{
+                int totalPages = (int)Math.Ceiling((double)Model.RowCount / Model.PageSize);
+            }
+            @for (int i = 1; i <= totalPages; i++)
+            {
+                <li class="page-item @(i == Model.Page ? "active" : "")">
+                    <a class="page-link" href="@Url.Action("Index", new { page = i })">@i</a>
+                </li>
+            }
+        </ul>
+    </nav>
+}

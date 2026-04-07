@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "SV22T1020330.Models/1.0.0": {
+        "runtime": {
+          "SV22T1020330.Models.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "SV22T1020330.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

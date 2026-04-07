@@ -1,0 +1,19 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\SV22T1020330.BusinessLayers\SV22T1020330.BusinessLayers.csproj" />
+    <ProjectReference Include="..\SV22T1020330.DataLayers\SV22T1020330.DataLayers.csproj" />
+    <ProjectReference Include="..\SV22T1020330.Models\SV22T1020330.Models.csproj" />
+  </ItemGroup>
+
+</Project>

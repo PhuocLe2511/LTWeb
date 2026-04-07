@@ -1,0 +1,52 @@
+﻿@model SV22T1020330.Models.Catalog.Product
+@using SV22T1020330.Models.Catalog
+@{
+    ViewData["Title"] = Model.ProductName;
+    var attrs = ViewBag.Attributes as List<ProductAttribute> ?? new();
+    var photos = ViewBag.Photos as List<ProductPhoto> ?? new();
+}
+
+<div class="row g-4">
+    <div class="col-md-5">
+        <img src="~/images/products/@(string.IsNullOrEmpty(Model.Photo) ? "nophoto.png" : Model.Photo)" class="img-fluid rounded border" alt="@Model.ProductName" />
+        @if (photos.Count > 0)
+        {
+            <div class="d-flex flex-wrap gap-2 mt-2">
+                @foreach (var ph in photos)
+                {
+                    <img src="~/images/products/@ph.Photo" class="rounded border" style="width:72px;height:72px;object-fit:cover" alt="" />
+                }
+            </div>
+        }
+    </div>
+    <div class="col-md-7">
+        <h1 class="h3">@Model.ProductName</h1>
+        <p class="text-primary fs-4 fw-bold">@Model.Price.ToString("N0") đ <span class="text-muted fs-6 fw-normal">/ @Model.Unit</span></p>
+        @if (!string.IsNullOrEmpty(Model.ProductDescription))
+        {
+            <p class="text-muted">@Model.ProductDescription</p>
+        }
+        @if (attrs.Count > 0)
+        {
+            <h6>Thuộc tính</h6>
+            <ul class="list-unstyled small">
+                @foreach (var a in attrs)
+                {
+                    <li><strong>@a.AttributeName:</strong> @a.AttributeValue</li>
+                }
+            </ul>
+        }
+        <form asp-controller="Cart" asp-action="Add" method="post" class="row g-2 align-items-center mt-3">
+            @Html.AntiForgeryToken()
+            <input type="hidden" name="productId" value="@Model.ProductID" />
+            <div class="col-auto">
+                <label class="form-label mb-0">Số lượng</label>
+                <input type="number" name="quantity" value="1" min="1" class="form-control" style="width:5rem" />
+            </div>
+            <div class="col-auto align-self-end">
+                <button type="submit" class="btn btn-primary">Thêm vào giỏ</button>
+            </div>
+        </form>
+        <a class="btn btn-link ps-0 mt-2" asp-action="Index">← Quay lại danh mục</a>
+    </div>
+</div>

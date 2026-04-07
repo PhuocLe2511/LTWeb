@@ -1,0 +1,31 @@
+﻿@model SV22T1020330.Models.Account.LoginModel
+
+<div class="row justify-content-center">
+    <div class="col-md-5 col-lg-4">
+        <div class="shop-panel">
+            <h1 class="h4 fw-bold mb-3">Đăng nhập</h1>
+            <p class="text-muted small mb-4">Dùng email đã đăng ký để vào tài khoản.</p>
+
+            @if (ViewBag.Message != null)
+            {
+                <div class="alert alert-warning border-0 rounded-3 small">@ViewBag.Message</div>
+            }
+
+            <form asp-action="Login" method="post">
+                <div class="mb-3">
+                    <label class="form-label small text-muted">Email</label>
+                    <input asp-for="Username" class="form-control rounded-3" autocomplete="username" />
+                </div>
+                <div class="mb-4">
+                    <label class="form-label small text-muted">Mật khẩu</label>
+                    <input asp-for="Password" type="password" class="form-control rounded-3" autocomplete="current-password" />
+                </div>
+                <button type="submit" class="btn btn-primary w-100 rounded-pill py-2 fw-semibold">Đăng nhập</button>
+            </form>
+
+            <p class="small text-muted mt-4 mb-0 text-center">
+                Chưa có tài khoản? <a asp-action="Register" class="fw-semibold">Đăng ký</a>
+            </p>
+        </div>
+    </div>
+</div>

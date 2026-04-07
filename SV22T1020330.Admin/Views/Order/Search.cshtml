@@ -1,0 +1,73 @@
+﻿@model PagedResult<OrderViewInfo>
+
+@if (Model != null && Model.DataItems != null && Model.DataItems.Any())
+{
+    <table class="table table-bordered">
+        <thead>
+            <tr>
+                <th>Mã ĐH</th>
+                <th>Khách hàng</th>
+                <th>Nhân viên</th>
+                <th>Ngày đặt</th>
+                <th>Trạng thái</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.DataItems)
+            {
+                <tr>
+                    <td>@item.OrderID</td>
+                    <td>@item.CustomerName</td>
+                    <td>@item.EmployeeName</td>
+                    <td>@item.OrderTime.ToString("dd/MM/yyyy HH:mm")</td>
+                    <td>@item.Status.GetDescription()</td>
+                    <td>
+                        <a href="/Order/Detail/@item.OrderID"
+                           class="btn btn-info btn-sm">
+                            Xem
+                        </a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <!-- PHÂN TRANG -->
+    <div class="card-footer">
+        <!-- Pagination -->
+        <ul class="pagination justify-content-center">
+            @foreach (var p in Model.GetDisplayPages())
+            {
+                if (p.IsCurrent)
+                {
+                    <li class="page-item active">
+                        <a class="page-link">@p.Page</a>
+                    </li>
+                }
+                else if (p.IsEllipsis)
+                {
+
+                    <li class="page-item disabled">
+                        <a class="page-link">...</a>
+                    </li>
+                }
+                else
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="javascript:;"
+                           onclick="paginationSearch(event, document.getElementById('formSearch'), @p.Page)">
+                            @p.Page
+                        </a>
+                    </li>
+
+                }
+            }
+        </ul>
+    </div>
+   
+}
+else
+{
+    <p>Không có dữ liệu</p>
+}

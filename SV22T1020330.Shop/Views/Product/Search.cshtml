@@ -1,0 +1,73 @@
+﻿@model SV22T1020330.Models.Common.PagedResult<SV22T1020330.Models.Catalog.Product>
+
+@if (Model != null && Model.DataItems.Any())
+{
+    <p class="text-muted small mb-3">Hiển thị @Model.DataItems.Count / @Model.RowCount sản phẩm (trang @Model.Page)</p>
+
+    <div class="row g-3">
+        @foreach (var item in Model.DataItems)
+        {
+            var photo = string.IsNullOrWhiteSpace(item.Photo) ? "" : item.Photo;
+            <div class="col-6 col-md-4 col-lg-3">
+                <div class="card product-card h-100">
+                    <div class="product-card__img-wrap @(string.IsNullOrEmpty(photo) ? "product-card__img-wrap--empty" : "")">
+                        @if (!string.IsNullOrEmpty(photo))
+                        {
+                            <img src="~/images/products/@photo"
+                                 alt="@item.ProductName"
+                                 loading="lazy"
+                                 decoding="async"
+                                 onerror="this.style.display='none'; this.parentElement.classList.add('product-card__img-wrap--empty');" />
+                        }
+                    </div>
+                    <div class="card-body">
+                        <div class="product-card__title">@item.ProductName</div>
+                        <div class="product-card__price">@item.Price.ToString("N0") đ</div>
+                        <div class="product-card__actions">
+                            <a asp-controller="Product" asp-action="Details" asp-route-id="@item.ProductID"
+                               class="btn btn-sm btn-outline-primary rounded-pill flex-grow-1">Chi tiết</a>
+                            <form method="post" asp-controller="Cart" asp-action="Add" class="m-0 flex-grow-1">
+                                <input type="hidden" name="productId" value="@item.ProductID" />
+                                <input type="hidden" name="quantity" value="1" />
+                                <button type="submit" class="btn btn-sm btn-primary rounded-pill w-100">Thêm</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <nav class="mt-4" aria-label="Phân trang">
+        <ul class="pagination justify-content-center flex-wrap mb-0">
+            @foreach (var p in Model.GetDisplayPages())
+            {
+                if (p.IsCurrent)
+                {
+                    <li class="page-item active">
+                        <span class="page-link">@p.Page</span>
+                    </li>
+                }
+                else if (p.IsEllipsis)
+                {
+                    <li class="page-item disabled">
+                        <span class="page-link">…</span>
+                    </li>
+                }
+                else
+                {
+                    <li class="page-item">
+                        <a class="page-link" href="javascript:void(0)"
+                           onclick="paginationSearch(event, document.getElementById('formSearch'), @p.Page)">@p.Page</a>
+                    </li>
+                }
+            }
+        </ul>
+    </nav>
+}
+else
+{
+    <div class="shop-panel text-center text-muted py-5">
+        <p class="mb-0">Không có sản phẩm phù hợp. Thử bỏ bớt điều kiện lọc hoặc từ khóa khác.</p>
+    </div>
+}

@@ -1,0 +1,33 @@
+﻿<div class="row justify-content-center">
+    <div class="col-md-5 col-lg-4">
+        <div class="shop-panel">
+            <h1 class="h4 fw-bold mb-3">Đăng ký</h1>
+            <p class="text-muted small mb-4">Tạo tài khoản khách hàng mới.</p>
+
+            @if (ViewBag.Message != null)
+            {
+                <div class="alert alert-warning border-0 rounded-3 small">@ViewBag.Message</div>
+            }
+
+            <form asp-action="Register" method="post">
+                <div class="mb-3">
+                    <label class="form-label small text-muted">Họ tên</label>
+                    <input name="name" class="form-control rounded-3" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label small text-muted">Email</label>
+                    <input name="email" type="email" class="form-control rounded-3" required autocomplete="email" />
+                </div>
+                <div class="mb-4">
+                    <label class="form-label small text-muted">Mật khẩu</label>
+                    <input type="password" name="password" class="form-control rounded-3" required autocomplete="new-password" />
+                </div>
+                <button type="submit" class="btn btn-primary w-100 rounded-pill py-2 fw-semibold">Đăng ký</button>
+            </form>
+
+            <p class="small text-muted mt-4 mb-0 text-center">
+                Đã có tài khoản? <a asp-action="Login" class="fw-semibold">Đăng nhập</a>
+            </p>
+        </div>
+    </div>
+</div>

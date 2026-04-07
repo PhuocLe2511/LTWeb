@@ -1,0 +1,54 @@
+﻿@model SV22T1020330.Models.Sales.OrderViewInfo
+@{
+    ViewBag.Title = "Từ chối đơn hàng";
+}
+
+<div class="modal-header text-bg-danger">
+    <strong class="modal-title">
+        Từ chối đơn hàng #@Model.OrderID
+    </strong>
+    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+</div>
+
+<form method="post" action="~/Order/Reject/@Model.OrderID">
+    <div class="modal-body">
+        @if (!ViewData.ModelState.IsValid)
+        {
+            <div class="alert alert-danger">
+                @Html.ValidationSummary()
+            </div>
+        }
+        
+        <div class="alert alert-danger d-flex align-items-center">
+            <i class="bi bi-exclamation-triangle me-2"></i>
+            Bạn có thực sự muốn từ chối đơn hàng này không?
+        </div>
+        
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <label class="form-label">Khách hàng</label>
+                <input type="text" class="form-control" value="@Model.CustomerName" readonly />
+            </div>
+            <div class="col-md-6">
+                <label class="form-label">Ngày đặt</label>
+                <input type="text" class="form-control" value="@Model.OrderTime.ToString("dd/MM/yyyy HH:mm")" readonly />
+            </div>
+        </div>
+        
+        <div class="mb-3">
+            <label class="form-label">Lý do từ chối</label>
+            <textarea name="rejectReason" class="form-control" rows="3" placeholder="Nhập lý do từ chối đơn hàng..."></textarea>
+        </div>
+    </div>
+
+    <div class="modal-footer">
+        <button type="submit" class="btn btn-danger">
+            <i class="bi bi-x-circle"></i> Từ chối
+        </button>
+        <button type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal">
+            Đóng
+        </button>
+    </div>
+</form>

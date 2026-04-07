@@ -1,0 +1,67 @@
+@model SV22T1020330.Models.Catalog.ProductPhoto
+@{
+    int productId = ViewBag.ProductID ?? Model.ProductID;
+}
+@section PageToolBar {
+    <form method="post" asp-action="DeletePhoto" asp-route-id="@productId" asp-route-photoId="@Model.PhotoID" style="display:inline;">
+        <input type="hidden" name="confirm" value="yes" />
+        <button type="submit" class="btn btn-danger">
+            <i class="bi bi-trash"></i> Xác nhận xóa
+        </button>
+    </form>
+    <a href="~/Product/Edit/@productId#photos" class="btn btn-secondary ms-1">
+        <i class="bi bi-x-circle"></i> Hủy bỏ
+    </a>
+}
+
+<div class="card card-danger card-outline mb-4">
+    <div class="card-header">
+        <h3 class="card-title">Xác nhận xóa hình ảnh</h3>
+    </div>
+    <div class="card-body">
+        <div class="alert alert-warning">
+            <i class="bi bi-exclamation-triangle-fill"></i>
+            <strong>Cảnh báo!</strong> Bạn có chắc chắn muốn xóa hình ảnh này không?
+        </div>
+
+        <div class="row">
+            <div class="col-md-6">
+                <table class="table table-bordered">
+                    <tr>
+                        <th style="width: 150px;">Mô tả:</th>
+                        <td>@Model.Description</td>
+                    </tr>
+                    <tr>
+                        <th>Thứ tự:</th>
+                        <td>@Model.DisplayOrder</td>
+                    </tr>
+                    <tr>
+                        <th>Trạng thái:</th>
+                        <td>
+                            @if (Model.IsHidden)
+                            {
+                                <span class="badge bg-secondary">Ẩn</span>
+                            }
+                            else
+                            {
+                                <span class="badge bg-success">Hiện</span>
+                            }
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-6">
+                <div class="text-center border rounded p-3">
+                    @if (!string.IsNullOrEmpty(Model.Photo))
+                    {
+                        <img src="~/anh/products/@Model.Photo" class="img-fluid" style="max-height:300px;" />
+                    }
+                    else
+                    {
+                        <img src="~/anh/products/nophoto.png" class="img-fluid" style="max-height:300px;" />
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

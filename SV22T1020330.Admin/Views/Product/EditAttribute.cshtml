@@ -1,0 +1,80 @@
+@model SV22T1020330.Models.Catalog.ProductAttribute
+@{
+    var isCreate = (Model.AttributeID == 0);
+    int productId = ViewBag.ProductID ?? Model.ProductID;
+}
+@section PageToolBar {
+    <button type="submit" form="formEdit" class="btn btn-primary">
+        <i class="bi bi-save"></i>
+        @(isCreate ? "Thêm thuộc tính" : "Lưu thuộc tính")
+    </button>
+
+    <a href="~/Product/Edit/@productId#attributes" class="btn btn-secondary ms-1">
+        <i class="bi bi-arrow-left"></i>
+        Quay lại
+    </a>
+}
+<div class="row justify-content-center">
+    <div class="col-12">
+        <div class="card card-outline card-success">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="bi bi-list-check me-2"></i>
+                    @(isCreate ? "Thêm thuộc tính mặt hàng" : "Cập nhật thuộc tính mặt hàng")
+                </h5>
+            </div>
+
+            <div class="card-body">
+                <form id="formEdit" method="post"
+                      asp-action="@(isCreate ? "CreateAttribute" : "EditAttribute")"
+                      asp-route-id="@productId"
+                      asp-route-attributeId="@Model.AttributeID">
+
+                    <input type="hidden" name="ProductID" value="@productId" />
+                    <input type="hidden" name="AttributeID" value="@Model.AttributeID" />
+
+                    <div class="row mb-3">
+                        <label class="col-sm-3 fw-semibold">
+                            Tên thuộc tính
+                        </label>
+                        <div class="col-sm-9">
+                            <input type="text"
+                                   name="AttributeName"
+                                   class="form-control"
+                                   value="@Model.AttributeName"
+                                   placeholder="Ví dụ: Màu sắc, Kích thước"
+                                   required autofocus />
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label class="col-sm-3 fw-semibold">
+                            Giá trị thuộc tính
+                        </label>
+                        <div class="col-sm-9">
+                            <input type="text"
+                                   name="AttributeValue"
+                                   class="form-control"
+                                   value="@Model.AttributeValue"
+                                   placeholder="Ví dụ: Đỏ, XL, 500g"
+                                   required />
+                        </div>
+                    </div>
+
+                    <div class="row mb-4">
+                        <label class="col-sm-3 fw-semibold">
+                            Thứ tự hiển thị
+                        </label>
+                        <div class="col-sm-3">
+                            <input type="number"
+                                   name="DisplayOrder"
+                                   class="form-control"
+                                   value="@Model.DisplayOrder"
+                                   min="1" />
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

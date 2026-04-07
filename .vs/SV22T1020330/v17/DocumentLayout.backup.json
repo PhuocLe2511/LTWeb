@@ -1,0 +1,531 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|d:\\a_phuoc_ltweb\\sv22t1020330\\sv22t1020330.admin\\views\\order\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|solutionrelative:sv22t1020330.admin\\views\\order\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|d:\\a_phuoc_ltweb\\sv22t1020330\\sv22t1020330.admin\\views\\product\\editphoto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|solutionrelative:sv22t1020330.admin\\views\\product\\editphoto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|d:\\a_phuoc_ltweb\\sv22t1020330\\sv22t1020330.admin\\views\\product\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|solutionrelative:sv22t1020330.admin\\views\\product\\edit.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|d:\\a_phuoc_ltweb\\sv22t1020330\\sv22t1020330.admin\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|solutionrelative:sv22t1020330.admin\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{430234F5-6041-4D72-8F73-8CE1E0CD36B1}|SV22T1020330.BusinessLayers\\SV22T1020330.BusinessLayers.csproj|d:\\a_phuoc_ltweb\\sv22t1020330\\sv22t1020330.businesslayers\\salesdataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{430234F5-6041-4D72-8F73-8CE1E0CD36B1}|SV22T1020330.BusinessLayers\\SV22T1020330.BusinessLayers.csproj|solutionrelative:sv22t1020330.businesslayers\\salesdataservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|d:\\a_phuoc_ltweb\\sv22t1020330\\sv22t1020330.admin\\views\\product\\search.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|solutionrelative:sv22t1020330.admin\\views\\product\\search.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|d:\\a_phuoc_ltweb\\sv22t1020330\\sv22t1020330.admin\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|solutionrelative:sv22t1020330.admin\\views\\product\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|d:\\a_phuoc_ltweb\\sv22t1020330\\sv22t1020330.admin\\views\\product\\listphotos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|solutionrelative:sv22t1020330.admin\\views\\product\\listphotos.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|d:\\a_phuoc_ltweb\\sv22t1020330\\sv22t1020330.admin\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|solutionrelative:sv22t1020330.admin\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|d:\\a_phuoc_ltweb\\sv22t1020330\\sv22t1020330.admin\\wwwroot\\images\\products\\demo.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|solutionrelative:sv22t1020330.admin\\wwwroot\\images\\products\\demo.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|d:\\a_phuoc_ltweb\\sv22t1020330\\sv22t1020330.admin\\wwwroot\\images\\products\\nophoto.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|solutionrelative:sv22t1020330.admin\\wwwroot\\images\\products\\nophoto.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|d:\\a_phuoc_ltweb\\sv22t1020330\\sv22t1020330.admin\\wwwroot\\images\\employees\\nophoto.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|solutionrelative:sv22t1020330.admin\\wwwroot\\images\\employees\\nophoto.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|d:\\a_phuoc_ltweb\\sv22t1020330\\sv22t1020330.admin\\wwwroot\\images\\employees\\9e0e94b8-4b81-4954-ae7b-eddcfd05e7c6.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|solutionrelative:sv22t1020330.admin\\wwwroot\\images\\employees\\9e0e94b8-4b81-4954-ae7b-eddcfd05e7c6.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|d:\\a_phuoc_ltweb\\sv22t1020330\\sv22t1020330.admin\\wwwroot\\images\\employees\\41e4a76e-75e6-4c83-8b43-e4d48bb665ef.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|solutionrelative:sv22t1020330.admin\\wwwroot\\images\\employees\\41e4a76e-75e6-4c83-8b43-e4d48bb665ef.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|d:\\a_phuoc_ltweb\\sv22t1020330\\sv22t1020330.admin\\wwwroot\\images\\employees\\0a1bb077-5178-41b6-b451-0944bd769016.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|solutionrelative:sv22t1020330.admin\\wwwroot\\images\\employees\\0a1bb077-5178-41b6-b451-0944bd769016.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|d:\\a_phuoc_ltweb\\sv22t1020330\\sv22t1020330.admin\\wwwroot\\images\\products\\20260407204041588_1542f4ecc2cb496ab3933a4b235f04d8.jpg||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|solutionrelative:sv22t1020330.admin\\wwwroot\\images\\products\\20260407204041588_1542f4ecc2cb496ab3933a4b235f04d8.jpg||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|d:\\a_phuoc_ltweb\\sv22t1020330\\sv22t1020330.admin\\wwwroot\\images\\products\\20260407203138135_859772ec90f1402fac918444bdff6dd9.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|solutionrelative:sv22t1020330.admin\\wwwroot\\images\\products\\20260407203138135_859772ec90f1402fac918444bdff6dd9.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|d:\\a_phuoc_ltweb\\sv22t1020330\\sv22t1020330.admin\\wwwroot\\images\\products\\20260407204009813_fb522af6b0be4f60ac9af61b1b201f70.png||{177559E0-D141-11D0-92DF-00A0C9138C45}",
+      "RelativeMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|solutionrelative:sv22t1020330.admin\\wwwroot\\images\\products\\20260407204009813_fb522af6b0be4f60ac9af61b1b201f70.png||{177559E0-D141-11D0-92DF-00A0C9138C45}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|d:\\a_phuoc_ltweb\\sv22t1020330\\sv22t1020330.admin\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|solutionrelative:sv22t1020330.admin\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|d:\\a_phuoc_ltweb\\sv22t1020330\\sv22t1020330.admin\\views\\product\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|solutionrelative:sv22t1020330.admin\\views\\product\\delete.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|d:\\a_phuoc_ltweb\\sv22t1020330\\sv22t1020330.admin\\views\\product\\deleteattribute.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|solutionrelative:sv22t1020330.admin\\views\\product\\deleteattribute.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|d:\\a_phuoc_ltweb\\sv22t1020330\\sv22t1020330.admin\\views\\product\\deletephoto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|solutionrelative:sv22t1020330.admin\\views\\product\\deletephoto.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|d:\\a_phuoc_ltweb\\sv22t1020330\\sv22t1020330.admin\\views\\product\\editattribute.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|solutionrelative:sv22t1020330.admin\\views\\product\\editattribute.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|d:\\a_phuoc_ltweb\\sv22t1020330\\sv22t1020330.admin\\views\\product\\listattributes.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|solutionrelative:sv22t1020330.admin\\views\\product\\listattributes.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\A_Phuoc_LTWeb\\SV22T1020343_LapTrinhWeb-master\\SV22T1020343_LapTrinhWeb-master\\SV22T1020343.Admin\\AppRoles.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\A_Phuoc_LTWeb\\SV22T1020343_LapTrinhWeb-master\\SV22T1020343_LapTrinhWeb-master\\SV22T1020343.BusinessLayers\\CatalogDataService.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|d:\\a_phuoc_ltweb\\sv22t1020330\\sv22t1020330.admin\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CD52AAD1-4CBD-4ADA-BFAB-378D3839DE99}|SV22T1020330.Admin\\SV22T1020330.Admin.csproj|solutionrelative:sv22t1020330.admin\\controllers\\employeecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{912F63F2-5966-4EB2-946E-7E1EF91A499D}|SV22T1020330.Shop\\SV22T1020330.Shop.csproj|d:\\a_phuoc_ltweb\\sv22t1020330\\sv22t1020330.shop\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{912F63F2-5966-4EB2-946E-7E1EF91A499D}|SV22T1020330.Shop\\SV22T1020330.Shop.csproj|solutionrelative:sv22t1020330.shop\\controllers\\ordercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{912F63F2-5966-4EB2-946E-7E1EF91A499D}|SV22T1020330.Shop\\SV22T1020330.Shop.csproj|d:\\a_phuoc_ltweb\\sv22t1020330\\sv22t1020330.shop\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{912F63F2-5966-4EB2-946E-7E1EF91A499D}|SV22T1020330.Shop\\SV22T1020330.Shop.csproj|solutionrelative:sv22t1020330.shop\\controllers\\productcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{912F63F2-5966-4EB2-946E-7E1EF91A499D}|SV22T1020330.Shop\\SV22T1020330.Shop.csproj|d:\\a_phuoc_ltweb\\sv22t1020330\\sv22t1020330.shop\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{912F63F2-5966-4EB2-946E-7E1EF91A499D}|SV22T1020330.Shop\\SV22T1020330.Shop.csproj|solutionrelative:sv22t1020330.shop\\controllers\\cartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{912F63F2-5966-4EB2-946E-7E1EF91A499D}|SV22T1020330.Shop\\SV22T1020330.Shop.csproj|d:\\a_phuoc_ltweb\\sv22t1020330\\sv22t1020330.shop\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{912F63F2-5966-4EB2-946E-7E1EF91A499D}|SV22T1020330.Shop\\SV22T1020330.Shop.csproj|solutionrelative:sv22t1020330.shop\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Detail.cshtml",
+              "DocumentMoniker": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\Views\\Order\\Detail.cshtml",
+              "RelativeDocumentMoniker": "SV22T1020330.Admin\\Views\\Order\\Detail.cshtml",
+              "ToolTip": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\Views\\Order\\Detail.cshtml",
+              "RelativeToolTip": "SV22T1020330.Admin\\Views\\Order\\Detail.cshtml",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAAAHcAAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-07T13:58:19.71Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "demo.png -  [English (United States)] - PNG [162x159, 32 bit, PNG]",
+              "DocumentMoniker": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\wwwroot\\images\\products\\demo.png",
+              "RelativeDocumentMoniker": "SV22T1020330.Admin\\wwwroot\\images\\products\\demo.png",
+              "ToolTip": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\wwwroot\\images\\products\\demo.png -  [English (United States)] - PNG [162x159, 32 bit, PNG]",
+              "RelativeToolTip": "SV22T1020330.Admin\\wwwroot\\images\\products\\demo.png -  [English (United States)] - PNG [162x159, 32 bit, PNG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2026-04-07T13:41:47.343Z",
+              "EditorCaption": " -  [English (United States)] - PNG [162x159, 32 bit, PNG]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "SV22T1020330.Admin\\Controllers\\ProductController.cs",
+              "ToolTip": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "SV22T1020330.Admin\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAAIgBAAAAAAAAAAAswIUAAABNAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-07T12:10:43.013Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\Views\\Product\\Index.cshtml",
+              "RelativeDocumentMoniker": "SV22T1020330.Admin\\Views\\Product\\Index.cshtml",
+              "ToolTip": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\Views\\Product\\Index.cshtml",
+              "RelativeToolTip": "SV22T1020330.Admin\\Views\\Product\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-07T12:15:35.365Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Search.cshtml",
+              "DocumentMoniker": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\Views\\Product\\Search.cshtml",
+              "RelativeDocumentMoniker": "SV22T1020330.Admin\\Views\\Product\\Search.cshtml",
+              "ToolTip": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\Views\\Product\\Search.cshtml",
+              "RelativeToolTip": "SV22T1020330.Admin\\Views\\Product\\Search.cshtml",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABAAAAA4AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-07T12:23:35.15Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ListPhotos.cshtml",
+              "DocumentMoniker": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\Views\\Product\\ListPhotos.cshtml",
+              "RelativeDocumentMoniker": "SV22T1020330.Admin\\Views\\Product\\ListPhotos.cshtml",
+              "ToolTip": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\Views\\Product\\ListPhotos.cshtml",
+              "RelativeToolTip": "SV22T1020330.Admin\\Views\\Product\\ListPhotos.cshtml",
+              "ViewState": "AgIAAEEAAAAAAAAAAAAAAAAAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-07T12:23:54.354Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "SV22T1020330.Admin\\Controllers\\OrderController.cs",
+              "ToolTip": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "SV22T1020330.Admin\\Controllers\\OrderController.cs",
+              "ViewState": "AgIAAJkBAAAAAAAAAAAtwPUBAAA0AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T11:46:16.68Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Edit.cshtml",
+              "DocumentMoniker": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\Views\\Product\\Edit.cshtml",
+              "RelativeDocumentMoniker": "SV22T1020330.Admin\\Views\\Product\\Edit.cshtml",
+              "ToolTip": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\Views\\Product\\Edit.cshtml",
+              "RelativeToolTip": "SV22T1020330.Admin\\Views\\Product\\Edit.cshtml",
+              "ViewState": "AgIAAJAAAAAAAAAAAAAuwKoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-07T12:24:29.822Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "EditPhoto.cshtml",
+              "DocumentMoniker": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\Views\\Product\\EditPhoto.cshtml",
+              "RelativeDocumentMoniker": "SV22T1020330.Admin\\Views\\Product\\EditPhoto.cshtml",
+              "ToolTip": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\Views\\Product\\EditPhoto.cshtml",
+              "RelativeToolTip": "SV22T1020330.Admin\\Views\\Product\\EditPhoto.cshtml",
+              "ViewState": "AgIAABUAAAAAAAAAAAAAAAAAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-07T12:24:13.896Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "nophoto.png -  [English (United States)] - PNG [126x157, 32 bit, PNG]",
+              "DocumentMoniker": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\wwwroot\\images\\products\\nophoto.png",
+              "RelativeDocumentMoniker": "SV22T1020330.Admin\\wwwroot\\images\\products\\nophoto.png",
+              "ToolTip": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\wwwroot\\images\\products\\nophoto.png -  [English (United States)] - PNG [126x157, 32 bit, PNG]",
+              "RelativeToolTip": "SV22T1020330.Admin\\wwwroot\\images\\products\\nophoto.png -  [English (United States)] - PNG [126x157, 32 bit, PNG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2026-04-07T13:41:46.02Z",
+              "EditorCaption": " -  [English (United States)] - PNG [126x157, 32 bit, PNG]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "SalesDataService.cs",
+              "DocumentMoniker": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.BusinessLayers\\SalesDataService.cs",
+              "RelativeDocumentMoniker": "SV22T1020330.BusinessLayers\\SalesDataService.cs",
+              "ToolTip": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.BusinessLayers\\SalesDataService.cs",
+              "RelativeToolTip": "SV22T1020330.BusinessLayers\\SalesDataService.cs",
+              "ViewState": "AgIAAAABAAAAAAAAAIAwwAwBAAAzAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-07T11:15:36.489Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "nophoto.png -  [English (United States)] - PNG [126x157, 32 bit, PNG]",
+              "DocumentMoniker": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\wwwroot\\images\\employees\\nophoto.png",
+              "RelativeDocumentMoniker": "SV22T1020330.Admin\\wwwroot\\images\\employees\\nophoto.png",
+              "ToolTip": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\wwwroot\\images\\employees\\nophoto.png -  [English (United States)] - PNG [126x157, 32 bit, PNG]",
+              "RelativeToolTip": "SV22T1020330.Admin\\wwwroot\\images\\employees\\nophoto.png -  [English (United States)] - PNG [126x157, 32 bit, PNG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2026-04-07T13:41:44.148Z",
+              "EditorCaption": " -  [English (United States)] - PNG [126x157, 32 bit, PNG]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "9e0e94b8-4b81-4954-ae7b-eddcfd05e7c6.png -  [English (United States)] - PNG [572x810, 32 bit, PNG]",
+              "DocumentMoniker": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\wwwroot\\images\\employees\\9e0e94b8-4b81-4954-ae7b-eddcfd05e7c6.png",
+              "RelativeDocumentMoniker": "SV22T1020330.Admin\\wwwroot\\images\\employees\\9e0e94b8-4b81-4954-ae7b-eddcfd05e7c6.png",
+              "ToolTip": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\wwwroot\\images\\employees\\9e0e94b8-4b81-4954-ae7b-eddcfd05e7c6.png -  [English (United States)] - PNG [572x810, 32 bit, PNG]",
+              "RelativeToolTip": "SV22T1020330.Admin\\wwwroot\\images\\employees\\9e0e94b8-4b81-4954-ae7b-eddcfd05e7c6.png -  [English (United States)] - PNG [572x810, 32 bit, PNG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2026-04-07T13:41:42.504Z",
+              "EditorCaption": " -  [English (United States)] - PNG [572x810, 32 bit, PNG]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "41e4a76e-75e6-4c83-8b43-e4d48bb665ef.png -  [English (United States)] - PNG [391x563, 32 bit, PNG]",
+              "DocumentMoniker": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\wwwroot\\images\\employees\\41e4a76e-75e6-4c83-8b43-e4d48bb665ef.png",
+              "RelativeDocumentMoniker": "SV22T1020330.Admin\\wwwroot\\images\\employees\\41e4a76e-75e6-4c83-8b43-e4d48bb665ef.png",
+              "ToolTip": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\wwwroot\\images\\employees\\41e4a76e-75e6-4c83-8b43-e4d48bb665ef.png -  [English (United States)] - PNG [391x563, 32 bit, PNG]",
+              "RelativeToolTip": "SV22T1020330.Admin\\wwwroot\\images\\employees\\41e4a76e-75e6-4c83-8b43-e4d48bb665ef.png -  [English (United States)] - PNG [391x563, 32 bit, PNG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2026-04-07T13:41:41.507Z",
+              "EditorCaption": " -  [English (United States)] - PNG [391x563, 32 bit, PNG]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "0a1bb077-5178-41b6-b451-0944bd769016.png -  [English (United States)] - PNG [675x358, 32 bit, PNG]",
+              "DocumentMoniker": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\wwwroot\\images\\employees\\0a1bb077-5178-41b6-b451-0944bd769016.png",
+              "RelativeDocumentMoniker": "SV22T1020330.Admin\\wwwroot\\images\\employees\\0a1bb077-5178-41b6-b451-0944bd769016.png",
+              "ToolTip": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\wwwroot\\images\\employees\\0a1bb077-5178-41b6-b451-0944bd769016.png -  [English (United States)] - PNG [675x358, 32 bit, PNG]",
+              "RelativeToolTip": "SV22T1020330.Admin\\wwwroot\\images\\employees\\0a1bb077-5178-41b6-b451-0944bd769016.png -  [English (United States)] - PNG [675x358, 32 bit, PNG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2026-04-07T13:41:39.771Z",
+              "EditorCaption": " -  [English (United States)] - PNG [675x358, 32 bit, PNG]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "20260407204041588_1542f4ecc2cb496ab3933a4b235f04d8.jpg -  [English (United States)] - Bitmap [1000x1017, 24 bit, JPG]",
+              "DocumentMoniker": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\wwwroot\\images\\products\\20260407204041588_1542f4ecc2cb496ab3933a4b235f04d8.jpg",
+              "RelativeDocumentMoniker": "SV22T1020330.Admin\\wwwroot\\images\\products\\20260407204041588_1542f4ecc2cb496ab3933a4b235f04d8.jpg",
+              "ToolTip": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\wwwroot\\images\\products\\20260407204041588_1542f4ecc2cb496ab3933a4b235f04d8.jpg -  [English (United States)] - Bitmap [1000x1017, 24 bit, JPG]",
+              "RelativeToolTip": "SV22T1020330.Admin\\wwwroot\\images\\products\\20260407204041588_1542f4ecc2cb496ab3933a4b235f04d8.jpg -  [English (United States)] - Bitmap [1000x1017, 24 bit, JPG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2026-04-07T13:41:07.428Z",
+              "EditorCaption": " -  [English (United States)] - Bitmap [1000x1017, 24 bit, JPG]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "20260407203138135_859772ec90f1402fac918444bdff6dd9.png -  [English (United States)] - PNG [314x240, 32 bit, PNG]",
+              "DocumentMoniker": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\wwwroot\\images\\products\\20260407203138135_859772ec90f1402fac918444bdff6dd9.png",
+              "RelativeDocumentMoniker": "SV22T1020330.Admin\\wwwroot\\images\\products\\20260407203138135_859772ec90f1402fac918444bdff6dd9.png",
+              "ToolTip": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\wwwroot\\images\\products\\20260407203138135_859772ec90f1402fac918444bdff6dd9.png -  [English (United States)] - PNG [314x240, 32 bit, PNG]",
+              "RelativeToolTip": "SV22T1020330.Admin\\wwwroot\\images\\products\\20260407203138135_859772ec90f1402fac918444bdff6dd9.png -  [English (United States)] - PNG [314x240, 32 bit, PNG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2026-04-07T13:41:03.917Z",
+              "EditorCaption": " -  [English (United States)] - PNG [314x240, 32 bit, PNG]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "20260407204009813_fb522af6b0be4f60ac9af61b1b201f70.png -  [English (United States)] - PNG [314x240, 32 bit, PNG]",
+              "DocumentMoniker": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\wwwroot\\images\\products\\20260407204009813_fb522af6b0be4f60ac9af61b1b201f70.png",
+              "RelativeDocumentMoniker": "SV22T1020330.Admin\\wwwroot\\images\\products\\20260407204009813_fb522af6b0be4f60ac9af61b1b201f70.png",
+              "ToolTip": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\wwwroot\\images\\products\\20260407204009813_fb522af6b0be4f60ac9af61b1b201f70.png -  [English (United States)] - PNG [314x240, 32 bit, PNG]",
+              "RelativeToolTip": "SV22T1020330.Admin\\wwwroot\\images\\products\\20260407204009813_fb522af6b0be4f60ac9af61b1b201f70.png -  [English (United States)] - PNG [314x240, 32 bit, PNG]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001533|",
+              "WhenOpened": "2026-04-07T13:41:01.651Z",
+              "EditorCaption": " -  [English (United States)] - PNG [314x240, 32 bit, PNG]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "Delete.cshtml",
+              "DocumentMoniker": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\Views\\Product\\Delete.cshtml",
+              "RelativeDocumentMoniker": "SV22T1020330.Admin\\Views\\Product\\Delete.cshtml",
+              "ToolTip": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\Views\\Product\\Delete.cshtml",
+              "RelativeToolTip": "SV22T1020330.Admin\\Views\\Product\\Delete.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-07T12:25:33.521Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "DeleteAttribute.cshtml",
+              "DocumentMoniker": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\Views\\Product\\DeleteAttribute.cshtml",
+              "RelativeDocumentMoniker": "SV22T1020330.Admin\\Views\\Product\\DeleteAttribute.cshtml",
+              "ToolTip": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\Views\\Product\\DeleteAttribute.cshtml",
+              "RelativeToolTip": "SV22T1020330.Admin\\Views\\Product\\DeleteAttribute.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-07T12:25:27.75Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "DeletePhoto.cshtml",
+              "DocumentMoniker": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\Views\\Product\\DeletePhoto.cshtml",
+              "RelativeDocumentMoniker": "SV22T1020330.Admin\\Views\\Product\\DeletePhoto.cshtml",
+              "ToolTip": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\Views\\Product\\DeletePhoto.cshtml",
+              "RelativeToolTip": "SV22T1020330.Admin\\Views\\Product\\DeletePhoto.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-07T12:25:20.187Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "SV22T1020330.Admin\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "SV22T1020330.Admin\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAJoAAAAAAAAAAAAswP8AAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T11:45:56.907Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "EditAttribute.cshtml",
+              "DocumentMoniker": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\Views\\Product\\EditAttribute.cshtml",
+              "RelativeDocumentMoniker": "SV22T1020330.Admin\\Views\\Product\\EditAttribute.cshtml",
+              "ToolTip": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\Views\\Product\\EditAttribute.cshtml",
+              "RelativeToolTip": "SV22T1020330.Admin\\Views\\Product\\EditAttribute.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAATAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-07T12:24:23.201Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ListAttributes.cshtml",
+              "DocumentMoniker": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\Views\\Product\\ListAttributes.cshtml",
+              "RelativeDocumentMoniker": "SV22T1020330.Admin\\Views\\Product\\ListAttributes.cshtml",
+              "ToolTip": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\Views\\Product\\ListAttributes.cshtml",
+              "RelativeToolTip": "SV22T1020330.Admin\\Views\\Product\\ListAttributes.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2026-04-07T12:24:01.888Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "AppRoles.cs",
+              "DocumentMoniker": "D:\\A_Phuoc_LTWeb\\SV22T1020343_LapTrinhWeb-master\\SV22T1020343_LapTrinhWeb-master\\SV22T1020343.Admin\\AppRoles.cs",
+              "RelativeDocumentMoniker": "..\\SV22T1020343_LapTrinhWeb-master\\SV22T1020343_LapTrinhWeb-master\\SV22T1020343.Admin\\AppRoles.cs",
+              "ToolTip": "D:\\A_Phuoc_LTWeb\\SV22T1020343_LapTrinhWeb-master\\SV22T1020343_LapTrinhWeb-master\\SV22T1020343.Admin\\AppRoles.cs",
+              "RelativeToolTip": "..\\SV22T1020343_LapTrinhWeb-master\\SV22T1020343_LapTrinhWeb-master\\SV22T1020343.Admin\\AppRoles.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAUwBEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-07T12:17:38.585Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "CatalogDataService.cs",
+              "DocumentMoniker": "D:\\A_Phuoc_LTWeb\\SV22T1020343_LapTrinhWeb-master\\SV22T1020343_LapTrinhWeb-master\\SV22T1020343.BusinessLayers\\CatalogDataService.cs",
+              "RelativeDocumentMoniker": "..\\SV22T1020343_LapTrinhWeb-master\\SV22T1020343_LapTrinhWeb-master\\SV22T1020343.BusinessLayers\\CatalogDataService.cs",
+              "ToolTip": "D:\\A_Phuoc_LTWeb\\SV22T1020343_LapTrinhWeb-master\\SV22T1020343_LapTrinhWeb-master\\SV22T1020343.BusinessLayers\\CatalogDataService.cs",
+              "RelativeToolTip": "..\\SV22T1020343_LapTrinhWeb-master\\SV22T1020343_LapTrinhWeb-master\\SV22T1020343.BusinessLayers\\CatalogDataService.cs",
+              "ViewState": "AgIAACwBAAAAAAAAAAAAAEQBAAABAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-07T12:11:26.455Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "OrderController.cs",
+              "DocumentMoniker": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Shop\\Controllers\\OrderController.cs",
+              "RelativeDocumentMoniker": "SV22T1020330.Shop\\Controllers\\OrderController.cs",
+              "ToolTip": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Shop\\Controllers\\OrderController.cs",
+              "RelativeToolTip": "SV22T1020330.Shop\\Controllers\\OrderController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAADIAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T11:47:01.806Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "ProductController.cs",
+              "DocumentMoniker": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Shop\\Controllers\\ProductController.cs",
+              "RelativeDocumentMoniker": "SV22T1020330.Shop\\Controllers\\ProductController.cs",
+              "ToolTip": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Shop\\Controllers\\ProductController.cs",
+              "RelativeToolTip": "SV22T1020330.Shop\\Controllers\\ProductController.cs",
+              "ViewState": "AgIAAFQAAAAAAAAAAAAYwCUAAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T11:47:00.98Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "CartController.cs",
+              "DocumentMoniker": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Shop\\Controllers\\CartController.cs",
+              "RelativeDocumentMoniker": "SV22T1020330.Shop\\Controllers\\CartController.cs",
+              "ToolTip": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Shop\\Controllers\\CartController.cs",
+              "RelativeToolTip": "SV22T1020330.Shop\\Controllers\\CartController.cs",
+              "ViewState": "AgIAAJIAAAAAAAAAAIAwwJ4AAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T11:46:54.366Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Shop\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "SV22T1020330.Shop\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Shop\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "SV22T1020330.Shop\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJsAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-06T11:46:44.017Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "EmployeeController.cs",
+              "DocumentMoniker": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\Controllers\\EmployeeController.cs",
+              "RelativeDocumentMoniker": "SV22T1020330.Admin\\Controllers\\EmployeeController.cs",
+              "ToolTip": "D:\\A_Phuoc_LTWeb\\SV22T1020330\\SV22T1020330.Admin\\Controllers\\EmployeeController.cs",
+              "RelativeToolTip": "SV22T1020330.Admin\\Controllers\\EmployeeController.cs",
+              "ViewState": "AgIAAPIAAAAAAAAAAAAAAOsAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-04-07T02:45:30.245Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

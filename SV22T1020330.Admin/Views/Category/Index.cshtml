@@ -1,0 +1,32 @@
+﻿@model PaginationSearchInput
+
+<form id="formSearch"
+      method="get"
+      action="~/Category/Search"
+      data-target="searchResult"
+      onsubmit="paginationSearch(event, this, 1)">
+
+    <input type="hidden" asp-for="PageSize" />
+
+    <div class="input-group">
+        <input asp-for="SearchValue"
+               class="form-control"
+               placeholder="Tên loại hàng..." autofocus />
+
+        <button class="btn btn-info">
+            <i class="bi bi-search"></i>
+        </button>
+    </div>
+</form>
+
+<div id="searchResult"></div>
+
+@section Scripts {
+    <script>
+        
+        // load lần đầu
+        document.addEventListener("DOMContentLoaded", function(){
+            paginationSearch(null, document.getElementById("formSearch"), @Model.Page);
+        });
+    </script>
+}

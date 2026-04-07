@@ -1,0 +1,20 @@
+﻿@{
+    var orderId = Context.Request.Query["id"].ToString();
+}
+
+<div class="shop-panel text-center py-5">
+    <div class="mb-3 text-success" style="font-size: 3rem;">✓</div>
+    <h1 class="h4 fw-bold mb-3">Đặt hàng thành công</h1>
+    @if (!string.IsNullOrEmpty(orderId))
+    {
+        <p class="text-muted mb-4">Mã đơn: <strong class="text-dark">#@orderId</strong>. Bạn có thể theo dõi trong mục đơn hàng.</p>
+    }
+    else
+    {
+        <p class="text-muted mb-4">Cảm ơn bạn. Đơn sẽ được xử lý sớm.</p>
+    }
+    <div class="d-flex flex-wrap justify-content-center gap-2">
+        <a class="btn btn-primary rounded-pill px-4" href="@Url.Action("Index", "Order")">Xem đơn hàng</a>
+        <a class="btn btn-outline-primary rounded-pill px-4" href="@Url.Action("Index", "Product")">Tiếp tục mua</a>
+    </div>
+</div>

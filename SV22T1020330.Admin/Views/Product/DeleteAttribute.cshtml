@@ -1,0 +1,55 @@
+@model SV22T1020330.Models.Catalog.ProductAttribute
+@{
+    int productId = ViewBag.ProductID ?? Model.ProductID;
+}
+@section PageToolBar {
+    <button type="submit" form="formDelete" class="btn btn-danger">
+        <i class="bi bi-trash"></i>
+        Xác nhận xóa
+    </button>
+
+    <a href="~/Product/Edit/@productId#attributes" class="btn btn-secondary ms-1">
+        <i class="bi bi-x-circle"></i>
+        Hủy bỏ
+    </a>
+}
+<div class="row justify-content-center">
+    <div class="col-12">
+        <div class="card card-danger card-outline">
+            <div class="card-header">
+                <h5 class="card-title mb-0">
+                    <i class="bi bi-exclamation-triangle me-2"></i>
+                    Xác nhận xóa thuộc tính
+                </h5>
+            </div>
+            <div class="card-body">
+                <div class="alert alert-warning">
+                    <i class="bi bi-exclamation-triangle-fill me-1"></i>
+                    <strong>Cảnh báo!</strong> Bạn có chắc chắn muốn xóa thuộc tính này không?
+                </div>
+
+                <table class="table table-bordered">
+                    <tr>
+                        <th style="width: 200px;">Tên thuộc tính:</th>
+                        <td>@Model.AttributeName</td>
+                    </tr>
+                    <tr>
+                        <th>Giá trị:</th>
+                        <td>@Model.AttributeValue</td>
+                    </tr>
+                    <tr>
+                        <th>Thứ tự hiển thị:</th>
+                        <td>@Model.DisplayOrder</td>
+                    </tr>
+                </table>
+
+                <form id="formDelete" method="post"
+                      asp-action="DeleteAttribute"
+                      asp-route-id="@productId"
+                      asp-route-attributeId="@Model.AttributeID">
+                    <input type="hidden" name="confirm" value="yes" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

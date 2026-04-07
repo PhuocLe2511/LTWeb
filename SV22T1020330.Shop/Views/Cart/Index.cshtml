@@ -1,0 +1,76 @@
+﻿@model List<SV22T1020330.Models.Cart.CartItem>
+
+<div class="shop-hero mb-4">
+    <h1>Giỏ hàng</h1>
+    <p>Kiểm tra sản phẩm và tiến hành đặt hàng khi đã đăng nhập.</p>
+</div>
+
+@if (Model == null || !Model.Any())
+{
+    <div class="shop-panel text-center py-5">
+        <p class="text-muted mb-4">Giỏ hàng của bạn đang trống.</p>
+        <a asp-controller="Product" asp-action="Index" class="btn btn-primary rounded-pill px-4">Xem sản phẩm</a>
+    </div>
+}
+else
+{
+    <div class="table-responsive shop-panel p-0">
+        <table class="table table-hover align-middle mb-0 table-shop">
+            <thead class="table-light">
+                <tr>
+                    <th class="ps-4" style="width: 100px;">Ảnh</th>
+                    <th>Sản phẩm</th>
+                    <th class="text-end">Đơn giá</th>
+                    <th class="text-center" style="width: 100px;">SL</th>
+                    <th class="text-end">Thành tiền</th>
+                    <th style="width: 90px;"></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="ps-4">
+                            <div class="rounded-2 overflow-hidden bg-light" style="width: 72px; height: 72px;">
+                                @if (!string.IsNullOrWhiteSpace(item.Product.Photo))
+                                {
+                                    <img src="~/images/products/@item.Product.Photo"
+                                         alt=""
+                                         class="w-100 h-100"
+                                         style="object-fit: cover;"
+                                         loading="lazy" />
+                                }
+                            </div>
+                        </td>
+                        <td class="fw-medium">@item.Product.ProductName</td>
+                        <td class="text-end text-muted">@item.Product.Price.ToString("N0") đ</td>
+                        <td class="text-center">
+                            <form method="post" asp-action="UpdateQuantity" class="d-inline-flex align-items-center">
+                                <input type="hidden" name="productId" value="@item.Product.ProductID" />
+                                <button type="submit" name="change" value="-1" class="btn btn-sm btn-outline-secondary rounded-circle" style="width: 28px; height: 28px; padding: 0;">-</button>
+                                <span class="mx-2 fw-semibold">@item.Quantity</span>
+                                <button type="submit" name="change" value="1" class="btn btn-sm btn-outline-secondary rounded-circle" style="width: 28px; height: 28px; padding: 0;">+</button>
+                            </form>
+                        </td>
+                        <td class="text-end fw-semibold">@((item.Quantity * item.Product.Price).ToString("N0")) đ</td>
+                        <td>
+                            <a asp-action="Remove" asp-route-id="@item.Product.ProductID"
+                               class="btn btn-sm btn-outline-danger rounded-pill">Xóa</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+    <div class="shop-panel d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+        <div>
+            <span class="text-muted">Tổng cộng</span>
+            <span class="h4 text-warning fw-bold ms-2">@Model.Sum(x => x.Quantity * x.Product.Price).ToString("N0") đ</span>
+        </div>
+        <div class="d-flex flex-wrap gap-2">
+            <a asp-controller="Product" asp-action="Index" class="btn btn-outline-secondary rounded-pill">Tiếp tục mua</a>
+            <a asp-controller="Order" asp-action="Create" class="btn btn-primary rounded-pill px-4">Thanh toán / Đặt hàng</a>
+        </div>
+    </div>
+}

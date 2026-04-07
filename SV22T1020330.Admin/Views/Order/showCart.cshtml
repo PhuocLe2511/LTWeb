@@ -1,0 +1,80 @@
+﻿@model IEnumerable<OrderDetailViewInfo>
+@{
+    Layout = null;
+
+    int stt = 0;
+    decimal sumPrice = 0;
+}
+
+<div class="card card-outline card-success">
+    <div class="card-header">
+        <h5 class="mb-0">
+            <i class="bi bi-cart"></i>
+            Danh sách mặt hàng đã chọn
+        </h5>
+    </div>
+
+    <div class="card-body">
+        <table class="table table-bordered table-hover align-middle">
+            <thead class="table-success">
+                <tr>
+                    <th class="text-center">#</th>
+                    <th>Tên hàng</th>
+                    <th class="text-center">ĐVT</th>
+                    <th class="text-center">SL</th>
+                    <th class="text-end">Giá</th>
+                    <th class="text-end">Thành tiền</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    
+                        stt++; 
+                        sumPrice += item.TotalPrice; 
+                    
+
+                    <tr>
+                        <td class="text-center">@stt</td>
+                        <td>@item.ProductName</td>
+                        <td class="text-center">@item.Unit</td>
+                        <td class="text-center">@item.Quantity</td>
+                        <td class="text-end">@item.SalePrice.ToString("N0")</td>
+                        <td class="text-end">@item.TotalPrice.ToString("N0")</td>
+                        <td class="text-end text-nowrap">
+                            <button type="button"
+                                    class="btn btn-sm btn-primary"
+                                    onclick="editCartItem(@item.ProductID)">
+                                <i class="bi bi-pencil"></i>
+                            </button>
+
+                            <button type="button"
+                                    class="btn btn-sm btn-danger"
+                                    onclick="deleteCartItem(@item.ProductID)">
+                                <i class="bi bi-dash"></i>
+                            </button>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <th colspan="5" class="text-end">Tổng cộng:</th>
+                    <th class="text-end">@sumPrice.ToString("N0")</th>
+                    <th></th>
+                </tr>
+            </tfoot>
+        </table>
+
+        <div class="text-end">
+            <button type="button"
+                    class="btn btn-sm btn-danger mt-2"
+                    onclick="clearCart()">
+                <i class="bi bi-trash"></i>
+                Xóa giỏ hàng
+            </button>
+        </div>
+    </div>
+</div>

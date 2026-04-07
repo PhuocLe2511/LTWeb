@@ -1,0 +1,309 @@
+﻿@using SV22T1020330.Models.Sales
+@model Tuple<OrderViewInfo, List<OrderDetailViewInfo>>
+@{
+    ViewBag.Title = "Chi tiết đơn hàng";
+
+    var o = Model.Item1;        // Order
+    var details = Model.Item2;  // List chi tiết
+    int stt = 0;
+    decimal total = 0;
+}
+
+@section PageToolBar {
+    <div class="btn-group">
+        <button type="button" class="btn btn-primary dropdown-toggle" data-bs-toggle="dropdown">
+            <i class="bi bi-gear me-1"></i> Xử lý đơn hàng
+        </button>
+        <ul class="dropdown-menu">
+            <li><a class="dropdown-item open-modal" href="~/Order/Accept/@o.OrderID">Duyệt đơn hàng</a></li>
+            <li><a class="dropdown-item open-modal" href="~/Order/Shipping/@o.OrderID">Chuyển giao hàng</a></li>
+            <li><a class="dropdown-item open-modal" href="~/Order/Finish/@o.OrderID">Hoàn tất đơn hàng</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item text-danger open-modal" href="~/Order/Cancel/@o.OrderID">Hủy đơn hàng</a></li>
+            <li><a class="dropdown-item text-danger open-modal" href="~/Order/Reject/@o.OrderID">Từ chối đơn hàng</a></li>
+        </ul>
+    </div>
+
+    <a href="~/Order/Delete/@o.OrderID" class="btn btn-danger ms-1 open-modal">
+        <i class="bi bi-trash"></i> Xóa
+    </a>
+
+    <a href="~/Order" class="btn btn-secondary ms-1">
+        <i class="bi bi-arrow-left"></i> Quay lại
+    </a>
+}
+
+<!-- TRẠNG THÁI -->
+<div class="alert alert-success d-flex align-items-center mb-3">
+    <i class="bi bi-check-circle-fill fs-4 me-2"></i>
+    <div>
+        <strong>Trạng thái:</strong>
+        @o.Status.GetDescription()
+    </div>
+</div>
+
+<!-- THÔNG TIN DON, KHÁCH HÀNG, GIAO HÀNG TRÊN 1 HÀNG -->
+<div class="row mb-3">
+    <!-- THÔNG TIN DON -->
+    <div class="col-md-4">
+        <div class="card card-primary card-outline h-100">
+            <div class="card-body">
+                <h6 class="card-title mb-3">
+                    <i class="bi bi-file-text me-2"></i>
+                </h6>
+                <div class="row mb-2">
+                    <div class="col-5 fw-bold">Thông tin đơn hàng</div>
+                    
+                </div>
+                <div class="row mb-2">
+                    <div class="col-5 fw-bold">Mã đơn hàng</div>
+                    <div class="col-7">@o.OrderID</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-5 fw-bold">Ngày lập</div>
+                    <div class="col-7">@o.OrderTime.ToString("dd/MM/yyyy HH:mm")</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-5 fw-bold">Nhân viên</div>
+                    <div class="col-7">@o.EmployeeName</div>
+                </div>
+                <div class="row">
+                    <div class="col-5 fw-bold">Ngày nhận đơn</div>
+                    <div class="col-7">@o.AcceptTime?.ToString("dd/MM/yyyy HH:mm")</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- KHÁCH HÀNG -->
+    <div class="col-md-4">
+        <div class="card card-info card-outline h-100">
+            <div class="card-body">
+                <h6 class="card-title mb-3">
+                    <i class="bi bi-person me-2"></i>
+                </h6>
+
+                <div class="row mb-2">
+                    <div class="col-5 fw-bold">Thông tin khách hàng</div>
+                    
+                </div>
+
+                <div class="row mb-2">
+                    <div class="col-5 fw-bold">Khách hàng</div>
+                    <div class="col-7">@o.CustomerName</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-5 fw-bold">Khách hàng</div>
+                    <div class="col-7">@o.CustomerName</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-5 fw-bold">Tên giao dịch</div>
+                    <div class="col-7">@o.CustomerContactName</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-5 fw-bold">Email</div>
+                    <div class="col-7 small">@o.CustomerEmail</div>
+                </div>
+                <div class="row">
+                    <div class="col-5 fw-bold">Địa chỉ</div>
+                    <div class="col-7 small">@o.CustomerAddress</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- GIAO HÀNG -->
+    <div class="col-md-4">
+        <div class="card card-success card-outline h-100">
+            <div class="card-body">
+                <h6 class="card-title mb-3">
+                    <i class="bi bi-truck me-2"></i>
+                </h6>
+                <div class="row mb-2">
+                    <div class="col-5 fw-bold">Thông tin giao hàng</div>
+                    
+                </div>
+
+                <div class="row mb-2">
+                    <div class="col-5 fw-bold">Người giao</div>
+                    <div class="col-7">@o.ShipperName</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-5 fw-bold">Điện thoại</div>
+                    <div class="col-7">@o.ShipperPhone</div>
+                </div>
+                <div class="row mb-2">
+                    <div class="col-5 fw-bold">Địa chỉ</div>
+                    <div class="col-7 small">@o.DeliveryAddress</div>
+                </div>
+                <div class="row">
+                    <div class="col-5 fw-bold">Tỉnh</div>
+                    <div class="col-7">@o.DeliveryProvince</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- DANH SÁCH HÀNG -->
+<div class="card card-secondary card-outline">
+    <div class="card-body table-responsive">
+        <table class="table table-bordered table-hover">
+            <thead class="text-center">
+                <tr>
+                    <th>STT</th>
+                    <th>Tên hàng</th>
+                    <th>ĐVT</th>
+                    <th>Số lượng</th>
+                    <th>Giá</th>
+                    <th>Thành tiền</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                @foreach (var item in details)
+                {
+                    stt++;
+                    total += item.TotalPrice;
+
+                    <tr>
+                        <td class="text-center">@stt</td>
+                        <td>@item.ProductName</td>
+                        <td class="text-center">@item.Unit</td>
+                        <td class="text-center">@item.Quantity</td>
+                        <td class="text-end">@item.SalePrice.ToString("N0")</td>
+                        <td class="text-end">@item.TotalPrice.ToString("N0")</td>
+                    </tr>
+                }
+            </tbody>
+
+            <tfoot>
+                <tr>
+                    <th colspan="5" class="text-end">Tổng cộng</th>
+                    <th class="text-end">@total.ToString("N0")</th>
+                </tr>
+            </tfoot>
+        </table>
+    </div>
+</div>
+
+<!-- CÁC NÚT XỬ LÝ ĐƠN HÀNG -->
+<div class="card card-info card-outline">
+    <div class="card-header">
+        <h5 class="card-title mb-0">
+            <i class="bi bi-gear me-2"></i>
+            Xử lý đơn hàng
+        </h5>
+    </div>
+    <div class="card-body">
+        <div class="row">
+            <div class="col-12">
+                <div class="btn-group" role="group">
+                    @if (o.Status == OrderStatusEnum.New)
+                    {
+                        <button type="button" class="btn btn-success" onclick="showModal('@Url.Action("Accept", new { id = o.OrderID })')">
+                            <i class="bi bi-check-circle"></i> Duyệt đơn
+                        </button>
+                        <button type="button" class="btn btn-info" onclick="showModal('@Url.Action("Shipping", new { id = o.OrderID })')">
+                            <i class="bi bi-truck"></i> Giao hàng
+                        </button>
+                        <button type="button" class="btn btn-warning" onclick="showModal('@Url.Action("Cancel", new { id = o.OrderID })')">
+                            <i class="bi bi-x-circle"></i> Hủy đơn
+                        </button>
+                        <button type="button" class="btn btn-danger" onclick="showModal('@Url.Action("Reject", new { id = o.OrderID })')">
+                            <i class="bi bi-x-octagon"></i> Từ chối
+                        </button>
+                    }
+                    else if (o.Status == OrderStatusEnum.Accepted)
+                    {
+                        <button type="button" class="btn btn-info" onclick="showModal('@Url.Action("Shipping", new { id = o.OrderID })')">
+                            <i class="bi bi-truck"></i> Giao hàng
+                        </button>
+                        <button type="button" class="btn btn-warning" onclick="showModal('@Url.Action("Cancel", new { id = o.OrderID })')">
+                            <i class="bi bi-x-circle"></i> Hủy đơn
+                        </button>
+                    }
+                    else if (o.Status == OrderStatusEnum.Shipping)
+                    {
+                        <button type="button" class="btn btn-primary" onclick="showModal('@Url.Action("Finish", new { id = o.OrderID })')">
+                            <i class="bi bi-check2-circle"></i> Hoàn tất
+                        </button>
+                    }
+                    else if (o.Status == OrderStatusEnum.Completed)
+                    {
+                        <button type="button" class="btn btn-secondary" onclick="showAlert('Đơn hàng đã được hoàn tất!')">
+                            <i class="bi bi-check2-circle"></i> Hoàn tất
+                        </button>
+                        <button type="button" class="btn btn-warning" onclick="showAlert('Đơn hàng đã giao không thể hủy!')">
+                            <i class="bi bi-x-circle"></i> Hủy đơn
+                        </button>
+                        <button type="button" class="btn btn-danger" onclick="showAlert('Đơn hàng đã hoàn tất không thể từ chối!')">
+                            <i class="bi bi-x-octagon"></i> Từ chối
+                        </button>
+                    }
+                    
+                    @if (o.Status == OrderStatusEnum.New || o.Status == OrderStatusEnum.Cancelled || o.Status == OrderStatusEnum.Rejected || o.Status == OrderStatusEnum.Completed)
+                    {
+                        <button type="button" class="btn btn-danger" onclick="showModal('@Url.Action("Delete", new { id = o.OrderID })')">
+                            <i class="bi bi-trash"></i> Xóa đơn
+                        </button>
+                    }
+                    
+                    <a href="~/Order" class="btn btn-secondary">
+                        <i class="bi bi-arrow-left"></i> Quay lại
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- MODAL DIALOG -->
+<div class="modal fade" id="dialogModal" tabindex="-1">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content" id="dialogContent">
+            <!-- Content will be loaded here -->
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        function showModal(url) {
+            $.get(url, function(data) {
+                $('#dialogContent').html(data);
+                $('#dialogModal').modal('show');
+            });
+        }
+        
+        function showAlert(message) {
+            alert(message);
+        }
+        
+        // Auto-hide modal after form submission
+        $(document).on('submit', '#dialogContent form', function(e) {
+            e.preventDefault();
+            var form = $(this);
+            var url = form.attr('action');
+            
+            $.post(url, form.serialize(), function(data) {
+                if (data.success) {
+                    // Success: check if message is empty (for shipping)
+                    if (data.message && data.message.trim() !== '') {
+                        alert(data.message);
+                    }
+                    $('#dialogModal').modal('hide');
+                    // Force reload to get fresh data from server
+                    setTimeout(function() {
+                        window.location.reload(true);
+                    }, 100);
+                } else {
+                    // Error: show alert
+                    alert(data.message);
+                }
+            }).fail(function() {
+                alert('Có lỗi xảy ra, vui lòng thử lại');
+            });
+        });
+    </script>
+}

@@ -1,0 +1,122 @@
+@{
+    ViewData["Title"] = "Thêm sản phẩm mới";
+}
+
+<div class="row">
+    <div class="col-lg-8">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3 class="card-title">Thông tin cơ bản</h3>
+            </div>
+            <div class="card-body">
+                <form onsubmit="event.preventDefault()">
+                    <div class="mb-4">
+                        <label class="form-label fw-semibold">Tên sản phẩm <span class="text-danger">*</span></label>
+                        <input type="text" class="form-control form-control-lg" placeholder="Ví dụ: iPhone 15 Pro Max">
+                        <div class="form-text text-muted">Tên hiển thị trên cửa hàng và kết quả tìm kiếm.</div>
+                    </div>
+
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Loại hàng <span class="text-danger">*</span></label>
+                            <select class="form-select">
+                                <option value="">-- Chọn loại hàng --</option>
+                                <option value="1">Điện thoại & Tablet</option>
+                                <option value="2">Máy tính & Laptop</option>
+                                <option value="3">Phụ kiện & Âm thanh</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Nhà cung cấp <span class="text-danger">*</span></label>
+                            <select class="form-select">
+                                <option value="">-- Chọn nhà cung cấp --</option>
+                                <option value="1">Apple Global</option>
+                                <option value="2">Samsung Store</option>
+                                <option value="3">Xiaomi Official</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row g-3 mb-4">
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Đơn vị tính <span class="text-danger">*</span></label>
+                            <input type="text" class="form-control" placeholder="Cái, Chiếc, Bộ...">
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Giá bán đề xuất (VNĐ) <span class="text-danger">*</span></label>
+                            <div class="input-group">
+                                <span class="input-group-text bg-light">₫</span>
+                                <input type="text" class="form-control fw-bold text-dark" placeholder="0">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mb-0">
+                        <label class="form-label fw-semibold">Mô tả sản phẩm</label>
+                        <textarea class="form-control" rows="6" placeholder="Nhập đặc điểm nổi bật, thông số kỹ thuật..."></textarea>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Hình ảnh sản phẩm</h3>
+            </div>
+            <div class="card-body">
+                <div class="row g-2">
+                    <div class="col-md-3">
+                        <div class="border dashed rounded d-flex align-items-center justify-content-center bg-light cursor-pointer" style="height: 100%; min-height: 100px;">
+                            <div class="text-center">
+                                <i class="bi bi-plus-circle text-muted h4 mb-0"></i>
+                                <div class="text-muted small">Thêm ảnh</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <div class="card mb-4">
+            <div class="card-header">
+                <h3 class="card-title">Thiết lập hiển thị</h3>
+            </div>
+            <div class="card-body">
+                <div class="mb-4">
+                    <label class="form-label fw-semibold">Trạng thái ban đầu</label>
+                    <select class="form-select border border-warning-subtle text-warning-emphasis fw-semibold">
+                        <option value="1">Bản nháp (Chưa bán)</option>
+                        <option value="2">Mở bán ngay</option>
+                    </select>
+                </div>
+                <div class="form-check form-switch mb-3">
+                    <input class="form-check-input" type="checkbox" id="isFeatured">
+                    <label class="form-check-label fw-medium" for="isFeatured">Sản phẩm nổi bật</label>
+                </div>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header">
+                <h3 class="card-title">Xác nhận</h3>
+            </div>
+            <div class="card-body">
+                <button type="submit" class="btn btn-primary w-100 mb-2">
+                    <i class="bi bi-check-lg me-2"></i> Tạo mặt hàng
+                </button>
+                <a href="~/Product" class="btn btn-light border w-100">
+                    Hủy và thoát
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        .dashed { border-style: dashed !important; border-width: 2px !important; }
+        .cursor-pointer { cursor: pointer; }
+    </style>
+}

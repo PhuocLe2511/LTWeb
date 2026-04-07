@@ -1,0 +1,133 @@
+@{
+    ViewData["Title"] = "Chi tiết sản phẩm";
+}
+
+<div class="row g-4">
+    <div class="col-lg-8">
+        <div class="card mb-4">
+            <div class="card-header d-flex justify-content-between align-items-center bg-white">
+                <h3 class="card-title">Hồ sơ sản phẩm: <span class="text-primary">iPhone 15 Pro Max</span></h3>
+                <span class="badge text-bg-success-subtle text-success border border-success-subtle px-3 py-2">Đang kinh doanh</span>
+            </div>
+            <div class="card-body p-0">
+                <table class="table table-borderless mb-0">
+                    <tbody class="border-top-0">
+                        <tr class="border-bottom">
+                            <td class="bg-light fw-semibold text-muted ps-4" style="width: 250px;">Mã định danh (SKU)</td>
+                            <td class="ps-4 fw-bold text-dark">IP15-PM-256-BLUE</td>
+                        </tr>
+                        <tr class="border-bottom">
+                            <td class="bg-light fw-semibold text-muted ps-4">Tên sản phẩm đầy đủ</td>
+                            <td class="ps-4">iPhone 15 Pro Max 256GB - Blue Titanium</td>
+                        </tr>
+                        <tr class="border-bottom">
+                            <td class="bg-light fw-semibold text-muted ps-4">Phân loại hàng</td>
+                            <td class="ps-4"><a href="#" class="text-decoration-none">Điện thoại & Tablet</a></td>
+                        </tr>
+                        <tr class="border-bottom">
+                            <td class="bg-light fw-semibold text-muted ps-4">Nhà cung cấp</td>
+                            <td class="ps-4"><a href="#" class="text-decoration-none">Apple Global Distribution</a></td>
+                        </tr>
+                        <tr class="border-bottom">
+                            <td class="bg-light fw-semibold text-muted ps-4">Giá bán niêm yết</td>
+                            <td class="ps-4"><h4 class="mb-0 fw-bold text-primary">32,990,000₫</h4></td>
+                        </tr>
+                        <tr class="border-bottom">
+                            <td class="bg-light fw-semibold text-muted ps-4">Đơn vị tính</td>
+                            <td class="ps-4">Chiếc (Hộp)</td>
+                        </tr>
+                        <tr>
+                            <td class="bg-light fw-semibold text-muted ps-4">Mô tả tóm tắt</td>
+                            <td class="ps-4 text-muted py-3">
+                                iPhone 15 Pro Max. Thiết kế Titan bền bỉ nhẹ nhàng. Nút Tác Vụ mới. Chip A17 Pro mạnh mẽ bậc nhất. Hệ thống camera chuyên nghiệp 48MP cực kỳ linh hoạt.
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="card-footer bg-white p-3">
+                <a href="~/Product/Edit/1" class="btn btn-primary px-4 me-2">
+                    <i class="bi bi-pencil-square me-2"></i> Chỉnh sửa thông tin
+                </a>
+                <a href="~/Product" class="btn btn-light border px-4">
+                    Quay lại danh sách
+                </a>
+            </div>
+        </div>
+
+        <div class="card">
+            <div class="card-header bg-white">
+                <h3 class="card-title">Đặc tính kỹ thuật</h3>
+            </div>
+            <div class="card-body">
+                <div class="row g-3">
+                    <div class="col-md-6">
+                        <div class="p-3 border rounded shadow-xs">
+                            <div class="small text-muted mb-1">Màn hình</div>
+                            <div class="fw-bold">6.7-inch Super Retina XDR</div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="p-3 border rounded shadow-xs">
+                            <div class="small text-muted mb-1">Dung lượng</div>
+                            <div class="fw-bold">256 GB</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-lg-4">
+        <!-- Main Image -->
+        <div class="card mb-4 overflow-hidden">
+            <div class="card-header bg-white">
+                <h3 class="card-title">Hình ảnh đại diện</h3>
+            </div>
+            <div class="card-body p-0 text-center bg-light border-bottom">
+                <img src="https://picsum.photos/id/160/600/600" class="img-fluid" alt="Product Image">
+            </div>
+            <div class="card-body bg-white text-center">
+                <a href="~/Product/ListPhoto/1" class="btn btn-sm btn-outline-primary w-100 fw-semibold">
+                    <i class="bi bi-images me-2"></i> Xem thư viện ảnh (12)
+                </a>
+            </div>
+        </div>
+
+        <!-- Inventory Status -->
+        <div class="card mb-4 border-info-subtle bg-info-subtle bg-opacity-10">
+            <div class="card-body">
+                <div class="d-flex align-items-center mb-3">
+                    <div class="p-2 bg-info bg-opacity-25 rounded me-3 text-info">
+                        <i class="bi bi-box-seam-fill h4 mb-0"></i>
+                    </div>
+                    <div>
+                        <div class="fw-bold">Tồn kho hiện tại</div>
+                        <div class="h3 mb-0 fw-bold">142</div>
+                    </div>
+                </div>
+                <div class="progress mb-2" style="height: 6px;">
+                    <div class="progress-bar bg-info" style="width: 70%"></div>
+                </div>
+                <div class="text-muted small">Mức tiêu thụ cao trong tháng này</div>
+            </div>
+        </div>
+
+        <!-- Danger Zone -->
+        <div class="card border-danger-subtle bg-danger-subtle bg-opacity-10">
+            <div class="card-body">
+                <h6 class="text-danger fw-bold mb-2">Vùng nguy hiểm</h6>
+                <p class="small text-muted mb-3">Xóa sản phẩm sẽ gỡ bỏ toàn bộ lịch sử giá và thuộc tính liên quan.</p>
+                <a href="~/Product/Delete/1" class="btn btn-sm btn-outline-danger w-100">
+                    <i class="bi bi-trash me-2"></i> Xóa vĩnh viễn sản phẩm
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Styles {
+    <style>
+        .shadow-xs { box-shadow: 0 1px 2px rgba(0,0,0,0.05); }
+    </style>
+}

@@ -1,0 +1,95 @@
+﻿@model List<SV22T1020330.Models.Cart.CartItem>
+
+<div class="shop-hero mb-4">
+    <h1>Xác nhận đặt hàng</h1>
+    <p>Kiểm tra giỏ hàng và nhập địa chỉ giao hàng.</p>
+</div>
+
+<div class="shop-panel p-0 overflow-hidden mb-4">
+    <div class="table-responsive">
+        <table class="table table-hover align-middle mb-0">
+            <thead class="table-light">
+                <tr>
+                    <th class="ps-4">Sản phẩm</th>
+                    <th class="text-center">SL</th>
+                    <th class="text-end">Đơn giá</th>
+                    <th class="text-end pe-4">Thành tiền</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td class="ps-4">@item.Product.ProductName</td>
+                        <td class="text-center">@item.Quantity</td>
+                        <td class="text-end">@item.Product.Price.ToString("N0") đ</td>
+                        <td class="text-end pe-4 fw-semibold">@((item.Quantity * item.Product.Price).ToString("N0")) đ</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<div class="shop-panel">
+    <div class="row g-3">
+        <div class="col-md-8">
+            <label class="form-label small text-muted" for="address">Địa chỉ nhận hàng</label>
+            <input type="text" id="address" class="form-control rounded-3" placeholder="Số nhà, đường, phường/xã..." autocomplete="street-address" />
+        </div>
+        <div class="col-md-4">
+            <label class="form-label small text-muted" for="province">Tỉnh / Thành phố</label>
+            <select id="province" class="form-select rounded-3" asp-items="ViewBag.Provinces">
+            </select>
+        </div>
+    </div>
+    <div class="mt-4 d-flex flex-wrap gap-2">
+        <button type="button" id="btnCreate" class="btn btn-primary rounded-pill px-4 fw-semibold">Xác nhận đặt hàng</button>
+        <a asp-controller="Cart" asp-action="Index" class="btn btn-outline-secondary rounded-pill">Quay lại giỏ</a>
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+        document.getElementById("btnCreate").addEventListener("click", function () {
+            var address = document.getElementById("address").value;
+            var province = document.getElementById("province").value;
+
+            if (!address.trim()) {
+                alert("Vui lòng nhập địa chỉ nhận hàng.");
+                return;
+            }
+
+            if (!province) {
+                alert("Vui lòng chọn tỉnh/thành phố.");
+                return;
+            }
+
+            fetch("@Url.Action("Create", "Order")", {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "Accept": "application/json"
+                },
+                body: JSON.stringify({ address: address, province: province })
+            })
+                .then(async function (res) {
+                    var data = await res.json().catch(function () { return null; });
+                    if (!data) {
+                        alert("Không nhận được phản hồi từ máy chủ.");
+                        return;
+                    }
+                    if (data.code === 1) {
+                        alert(data.message);
+                        var baseUrl = "@Url.Action("Success", "Order")";
+                        window.location.href = data.orderId ? baseUrl + "?id=" + encodeURIComponent(data.orderId) : baseUrl;
+                    } else {
+                        alert(data.message || "Đặt hàng thất bại.");
+                    }
+                })
+                .catch(function () {
+                    alert("Lỗi kết nối. Vui lòng thử lại.");
+                });
+        });
+    </script>
+}

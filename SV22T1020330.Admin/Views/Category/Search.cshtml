@@ -1,0 +1,57 @@
+﻿@model PagedResult<Category>
+@{
+    Layout = null;
+}
+
+<div class="mb-2 text-muted">
+    Có <strong>@Model.RowCount</strong> loại hàng
+</div>
+
+<table class="table table-bordered table-hover">
+    <thead>
+        <tr>
+            <th>Tên loại hàng</th>
+            <th>Mô tả</th>
+            <th class="text-center" style="width:100px;">Thao tác</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var c in Model.DataItems)
+        {
+            <tr>
+                <td>@c.CategoryName</td>
+                <td>@c.Description</td>
+                <td class="text-center">
+                    <a href="~/Category/Edit/@c.CategoryID" class="btn btn-sm btn-primary">
+                        <i class="bi bi-pencil"></i>
+                    </a>
+                    <a href="~/Category/Delete/@c.CategoryID" class="btn btn-sm btn-danger">
+                        <i class="bi bi-trash"></i>
+                    </a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<!-- PAGINATION -->
+@{
+    int totalPages = (int)Math.Ceiling((double)Model.RowCount / Model.PageSize);
+}
+
+@if (totalPages > 1)
+{
+    <ul class="pagination justify-content-center">
+
+        @for (int i = 1; i <= totalPages; i++)
+        {
+            <li class="page-item @(i == Model.Page ? "active" : "")">
+                <a href="javascript:;" class="page-link"
+                   onclick="paginationSearch(null, document.getElementById('formSearch'), @i)">
+                    @i
+                </a>
+            </li>
+        }
+
+    </ul>
+}

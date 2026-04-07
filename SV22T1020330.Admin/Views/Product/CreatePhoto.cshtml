@@ -1,0 +1,68 @@
+@{
+    ViewData["Title"] = "Thêm hình ảnh sản phẩm";
+}
+
+<div class="card card-primary card-outline mb-4">
+    <div class="card-header">
+        <h3 class="card-title">Thêm hình ảnh cho sản phẩm: <strong>Sản phẩm 1</strong></h3>
+    </div>
+    <form onsubmit="event.preventDefault()">
+        <div class="card-body">
+            <div class="mb-3">
+                <label for="photoFile" class="form-label">Chọn hình ảnh: <span class="text-danger">*</span></label>
+                <input type="file" class="form-control" id="photoFile" name="photoFile" accept="image/*" required>
+                <small class="form-text text-muted">Chấp nhận: JPG, PNG, GIF. Kích thước tối đa: 5MB</small>
+            </div>
+
+            <div class="mb-3">
+                <label for="photoTitle" class="form-label">Tiêu đề hình ảnh:</label>
+                <input type="text" class="form-control" id="photoTitle" name="photoTitle" placeholder="Nhập tiêu đề cho hình ảnh...">
+            </div>
+
+            <div class="mb-3">
+                <label for="displayOrder" class="form-label">Thứ tự hiển thị:</label>
+                <input type="number" class="form-control" id="displayOrder" name="displayOrder" value="1" min="1">
+            </div>
+
+            <div class="mb-3">
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="isPrimary" name="isPrimary">
+                    <label class="form-check-label" for="isPrimary">
+                        Đặt làm ảnh chính
+                    </label>
+                </div>
+            </div>
+
+            <!-- Preview Area -->
+            <div class="mb-3">
+                <label class="form-label">Xem trước:</label>
+                <div id="imagePreview" class="border rounded p-3 text-center" style="min-height: 200px; background-color: #f8f9fa;">
+                    <p class="text-muted">Chưa có hình ảnh được chọn</p>
+                </div>
+            </div>
+        </div>
+        <div class="card-footer">
+            <button type="submit" class="btn btn-primary">
+                <i class="bi bi-upload"></i> Tải lên
+            </button>
+            <a href="~/Product/ListPhoto/1" class="btn btn-secondary">
+                <i class="bi bi-x-circle"></i> Hủy bỏ
+            </a>
+        </div>
+    </form>
+</div>
+
+<script>
+    document.getElementById('photoFile').addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        const preview = document.getElementById('imagePreview');
+        
+        if (file) {
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                preview.innerHTML = '<img src="' + e.target.result + '" class="img-fluid" style="max-height: 400px;" alt="Preview">';
+            }
+            reader.readAsDataURL(file);
+        }
+    });
+</script>

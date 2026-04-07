@@ -1,0 +1,48 @@
+﻿@model SV22T1020330.Models.Common.PaginationSearchInput
+
+@{
+    ViewBag.Title = "Quản lý Nhân viên";
+}
+
+@section PageToolBar {
+    <a href="~/Employee/Create" class="btn btn-primary">
+        <i class="bi bi-plus-circle me-1"></i>
+        Bổ sung
+    </a>
+}
+
+<div class="card mb-3">
+    <div class="card-body">
+        <form id="formSearch"
+              method="get"
+              action="~/Employee/Search"
+              data-target="searchResult"
+              onsubmit="paginationSearch(event, this, 1)">
+
+            
+            <input type="hidden" asp-for="PageSize" />
+
+            <div class="input-group">
+                <input type="text"
+                       asp-for="SearchValue"
+                       class="form-control"
+                       placeholder="Tên nhân viên..." />
+
+                <button type="submit" class="btn btn-info">
+                    <i class="bi bi-search me-1"></i>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="searchResult">
+</div>
+
+@section Scripts {
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            paginationSearch(null, document.getElementById("formSearch"), @Model.Page);
+        });
+    </script>
+}

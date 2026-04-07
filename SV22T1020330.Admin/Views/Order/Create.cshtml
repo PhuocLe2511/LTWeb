@@ -1,0 +1,286 @@
+﻿@model ProductSearchInput
+
+@{
+    ViewBag.Title = "Lập đơn hàng";
+}
+
+<div class="row">
+    <!-- SEARCH -->
+    <div class="col-4">
+        <div class="card card-outline card-primary h-100">
+
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="bi bi-search"></i>
+                    Lựa chọn hàng cần bán
+                </h5>
+            </div>
+
+            <div class="card-body">
+                <form id="formSearch"
+                      method="get"
+                      action="/Order/SearchProduct"
+                      onsubmit="doSearch(event, this)">
+
+                    <!-- FIX QUAN TRỌNG -->
+                    <input type="hidden" name="Page" value="1" />
+                    <input type="hidden" name="PageSize" value="@Model.PageSize" />
+
+                    <div class="input-group">
+                        <input class="form-control"
+                               name="SearchValue"
+                               value="@Model.SearchValue"
+                               placeholder="Nhập tên mặt hàng..." autofocus />
+                        <button class="btn btn-primary">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </div>
+                </form>
+
+                <div id="searchResult"></div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="col-8">
+
+        <!-- CART -->
+        <div id="cart" class="mb-3"></div>
+
+        <!-- CUSTOMER -->
+        <div class="card card-outline card-info">
+            <div class="card-header">
+                <h5 class="mb-0">
+                    <i class="bi bi-person"></i>
+                    Thông tin khách hàng & nơi giao hàng
+                </h5>
+            </div>
+
+            <div class="card-body">
+                <form method="post" onsubmit="createOrder(event,this)">
+
+                    <div class="row mb-3">
+                        <label class="col-md-3 col-form-label">Khách hàng</label>
+                        <div class="col-md-9">
+                            <select class="form-select" name="CustomerID">
+                                @if (ViewBag.Customers != null)
+                                {
+                                    foreach (var item in ViewBag.Customers)
+                                    {
+                                        <option value="@item.Value">@item.Text</option>
+                                    }
+                                }
+                                else
+                                {
+                                    <option value="0">-- Chọn khách hàng --</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label class="col-md-3 col-form-label">Tỉnh/thành</label>
+                        <div class="col-md-9">
+                            <select class="form-select" name="Province">
+                                @if (ViewBag.Provinces != null)
+                                {
+                                    foreach (var item in ViewBag.Provinces)
+                                    {
+                                        <option value="@item.Value">@item.Text</option>
+                                    }
+                                }
+                                else
+                                {
+                                    <option value="">-- Chọn Tỉnh/thành --</option>
+                                }
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="row mb-3">
+                        <label class="col-md-3 col-form-label">Địa chỉ</label>
+                        <div class="col-md-9">
+                            <textarea class="form-control" name="Address"></textarea>
+                        </div>
+                    </div>
+
+                    <div class="text-end">
+                        <button class="btn btn-primary">
+                            <i class="bi bi-check-circle"></i>
+                            Lập đơn hàng
+                        </button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+@section Scripts {
+    <script>
+
+        // ================= INIT =================
+        document.addEventListener("DOMContentLoaded", function () {
+            doSearch(null, document.getElementById("formSearch"));
+            showCart();
+        });
+
+        // ================= REQUEST =================
+        async function request(url, options = {}) {
+            try {
+                const res = await fetch(url, options);
+                if (!res.ok) throw new Error("HTTP error");
+                return options.isJson ? await res.json() : await res.text();
+            } catch (err) {
+                console.error(err);
+                alert("Lỗi hệ thống");
+            }
+        }
+
+        // ================= SEARCH =================
+        async function doSearch(event, form) {
+            if (event) event.preventDefault();
+
+            const url = form.action + "?" + new URLSearchParams(new FormData(form));
+
+            const html = await request(url, { isJson: false });
+            document.getElementById("searchResult").innerHTML = html;
+        }
+
+                // FIX PHÂN TRANG
+        function paginationSearch(page) {
+            const form = document.getElementById("formSearch");
+
+            let inputPage = form.querySelector("[name='Page']");
+            if (!inputPage) {
+                inputPage = document.createElement("input");
+                inputPage.type = "hidden";
+                inputPage.name = "Page";
+                form.appendChild(inputPage);
+            }
+
+            inputPage.value = page;
+            doSearch(null, form);
+        }
+
+        // ================= CART =================
+        function showCart() {
+            fetch('/Order/ShowCart')
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById("cart").innerHTML = html;
+            })
+            .catch(err => {
+                console.error(err);
+                document.getElementById("cart").innerHTML = "Không tải được giỏ hàng";
+            });
+        }
+
+        function addCartItem(event, form) {
+            event.preventDefault();
+
+            fetch('/Order/AddCartItem', {
+                method: 'POST',
+                body: new FormData(form)
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.code === 0) {
+                    alert(data.message);
+                } else {
+                    showCart();
+                }
+            })
+            .catch(err => {
+                console.error(err);
+                alert("Lỗi thêm giỏ hàng");
+            });
+        }
+
+        function editCartItem(productId) {
+            fetch(`/Order/EditCartItem?productId=${productId}`)
+            .then(res => res.text())
+            .then(html => {
+                document.getElementById("dialogContent").innerHTML = html;
+
+                const modal = new bootstrap.Modal(document.getElementById('dialogModal'));
+                modal.show();
+            });
+        }
+
+        function deleteCartItem(productID) {
+            if (!confirm("Bạn có chắc muốn xoá sản phẩm này không?")) return;
+
+            fetch(`/Order/DeleteCartItem?productId=${productID}`, {
+                method: 'POST'
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.code === 0) {
+                    alert(data.message);
+                } else {
+                    showCart();
+                }
+            });
+        }
+
+        function clearCart() {
+            if (!confirm("Bạn có chắc muốn xoá toàn bộ giỏ hàng không?")) return;
+
+            fetch('/Order/ClearCart', { method: 'POST' })
+            .then(res => res.json())
+            .then(data => {
+                if (data.code === 0) {
+                    alert(data.message);
+                } else {
+                    showCart();
+                }
+            });
+        }
+
+        function updateCartItem(event, form) {
+            event.preventDefault();
+
+            fetch('/Order/UpdateCartItem', {
+                method: 'POST',
+                body: new FormData(form)
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.code === 0) {
+                    alert(data.message);
+                } else {
+                    bootstrap.Modal.getInstance(document.getElementById('dialogModal'))?.hide();
+                    showCart();
+                }
+            });
+        }
+
+        function createOrder(event, form) {
+            event.preventDefault();
+
+            fetch('/Order/CreateOrder', {
+                method: 'POST',
+                body: new FormData(form)
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.code === 0) {
+                    alert(data.message);
+                } else {
+                    window.location.href = `/Order/Detail/${data.code}`;
+                }
+            });
+        }
+
+    </script>
+}
+<div class="modal fade" id="dialogModal">
+    <div class="modal-dialog">
+        <div class="modal-content" id="dialogContent"></div>
+    </div>
+</div>
